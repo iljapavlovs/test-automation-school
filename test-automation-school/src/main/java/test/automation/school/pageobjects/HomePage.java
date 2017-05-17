@@ -24,6 +24,9 @@ public class HomePage {
     @FindBy(xpath = "//*[@class='page_header_head']/h1")
     public WebElement pageHeaderHead;
 
+    @FindBy(xpath = "//*[text()=\"Поиск\"]")
+    public WebElement switchToSearch;
+
     public HomePage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
@@ -45,6 +48,12 @@ public class HomePage {
         }
         return this;
     }
-}
 
+    public HomePage pressSearch() {
+        if (switchToSearch.isDisplayed()){
+            switchToSearch.click();
+        }
+        return this;
+    }
+}
 
