@@ -24,6 +24,9 @@ public class HomePage {
     @FindBy(xpath = "//*[@class='page_header_head']/h1")
     public WebElement pageHeaderHead;
 
+    @FindBy(xpath = "//*[contains(@href,'/search/')]")
+    public WebElement pageHeaderSearch;
+
     public HomePage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
