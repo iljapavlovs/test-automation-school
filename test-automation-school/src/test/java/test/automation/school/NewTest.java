@@ -31,6 +31,6 @@ public class NewTest extends BaseTest {
         searchPage.clickSearchButton();
 
         //Assert
-        Assert.assertEquals("Цена", searchPage.searchResultsPresent.getText());
+        Assert.assertEquals("There are no search results displayed","Цена", searchPage.searchResultsPresent.getText());
     }
 }
