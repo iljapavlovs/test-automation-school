@@ -35,13 +35,9 @@ public enum DriverType implements DriverSetup {
             System.setProperty("webdriver.firefox.bin", "C:\\tools\\Firefox\\firefox.exe");
 
             DesiredCapabilities caps = new FirefoxOptions()
-// For example purposes only
-//                    .setProfile(new FirefoxProfile())
                     .setLegacy(true)
                     .addTo(capabilities);
             return new FirefoxDriver(caps);
-
-
         }
     },
     CHROME {

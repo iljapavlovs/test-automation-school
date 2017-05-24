@@ -22,9 +22,6 @@ public class SearchResultPage {
 	@FindBy(css = "[id*='tr_']:not([id*='tr_bnr_'])")
 	private List<WebElement> searchResultElements;
 
-	@FindBy(how = How.CSS, using = "input[name=\"mid[]\"].mchk")
-	private WebElement searchResultCheckbox;
-
 	@FindBy(id = "page_main")
 	private WebElement searchResultMainSection;
 
@@ -38,67 +35,4 @@ public class SearchResultPage {
 	public int getSearchResultElementCount(){
 		return searchResultElements.size();
 	}
-
-
-//
-//	public SearchResultPage sortBy(String sortingCriteria) {
-//		WebDriverHelper.selectDropdownValueByText(sortByDropdown, sortingCriteria);
-//		return this;
-//	}
-//
-//	public SearchResultPage selectDealType(String dealType) {
-//
-//		dealTypeDropdown = (new WebDriverWait(driver, 10))
-//				.until(ExpectedConditions.presenceOfElementLocated(By.xpath(DEAL_TYPE_DROPDOWN_XPATH)));
-//
-//		WebDriverHelper.selectDropdownValueByText(dealTypeDropdown, dealType);
-//		return this;
-//	}
-//
-//	public SearchPage gotToAdvancedSearch() {
-//		try{
-//		this.advancedSearchLink = (new WebDriverWait(driver, 10))
-//				.until(ExpectedConditions.presenceOfElementLocated(By.linkText(ADVANCED_SEARCH_LINK_TEXT)));
-//
-//		this.advancedSearchLink.click();
-//		}
-//		catch(org.openqa.selenium.StaleElementReferenceException ex)
-//		{
-//			System.out.println(ex.getMessage());
-//			WebElement advancedSearchLink = driver.findElement(By.linkText(ADVANCED_SEARCH_LINK_TEXT));
-//			advancedSearchLink.click();
-//			}
-//		return new SearchPage(driver);
-//	}
-//
-//	public List<String> getSearchItemsText(int checkCount) {
-//		this.searchItemTextList = new ArrayList<String>();
-//		for (int i = 0; i < checkCount; i++) {
-//			String searchItemText = this.searchResultElements.get(i).findElement(By.xpath(SEARCH_ITEMS_TEXT_XPATH))
-//					.getText();
-//			System.out.println("Search Items - " + searchItemText);
-//			this.searchItemTextList.add(searchItemText);
-//		}
-//		return this.searchItemTextList;
-//	}
-//
-//	public SearchPage checkCheckboxes(int checkCount) {
-//
-//		for (int i = 0; i < checkCount; i++) {
-//			this.searchResultElements.get(i).findElement(By.cssSelector("input[name=\"mid[]\"].mchk")).click();
-//		}
-//		return new SearchPage(driver);
-//	}
-//
-//	public SelectedAdsPage showSelectedAds() {
-//
-//		this.showSelectedAdsLink = (new WebDriverWait(driver, 10))
-//				.until(ExpectedConditions.presenceOfElementLocated(By.id(SHOW_SELECTED_ADS_LINK_ID)));
-//
-//		this.showSelectedAdsLink.click();
-//		return new SelectedAdsPage(driver);
-//	}
-
-
-
 }
