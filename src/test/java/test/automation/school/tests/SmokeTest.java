@@ -1,4 +1,4 @@
-package test.automation.school;
+package test.automation.school.tests;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
@@ -21,7 +21,7 @@ import static org.testng.Assert.assertTrue;
 
 
 public class SmokeTest extends BaseTest{
-    HomePage homePage;
+    private HomePage homePage;
 
     @Test
     public void testInitialLanguage() {
@@ -29,7 +29,7 @@ public class SmokeTest extends BaseTest{
         homePage = new HomePage(driver);
 
         //Assert
-        assertEquals("SLUDINĀJUMI", homePage.pageHeaderHead.getText());
+        assertEquals("SLUDINĀJUMI", homePage.getPageHeaderHeadText());
     }
 
     @Test
@@ -41,7 +41,7 @@ public class SmokeTest extends BaseTest{
         homePage.switchLangTo("RU");
 
         //Assert
-        assertEquals("ОБЪЯВЛЕНИЯ", homePage.pageHeaderHead.getText());
+        assertEquals("ОБЪЯВЛЕНИЯ", homePage.getPageHeaderHeadText());
     }
 
     @Test
@@ -54,6 +54,6 @@ public class SmokeTest extends BaseTest{
         homePage.switchLangTo("LV");
 
         //Assert
-        assertEquals("SLUDINĀJUMI", homePage.pageHeaderHead.getText());
+        assertEquals("SLUDINĀJUMI", homePage.getPageHeaderHeadText());
     }
 }

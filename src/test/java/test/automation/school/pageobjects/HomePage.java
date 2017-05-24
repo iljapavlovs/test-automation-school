@@ -12,17 +12,17 @@ public class HomePage {
     private WebDriverWait wait;
 
     @FindBy(xpath = "//*[@href='/ru/']")
-    public WebElement switchLangToRuLink;
+    private WebElement switchLangToRuLink;
     @FindBy(xpath = "//*[@href='/lv/']")
-    public WebElement switchLangToLvLink;
+    private WebElement switchLangToLvLink;
     @FindBy(xpath = "//*[@class='a1'][@href='/ru/electronics/']")
-    public WebElement goToElectronicsLink;
+    private WebElement electronicsHeaderLink;
 
     @FindBy(xpath = "//img[@class='page_header_logo']")
-    public WebElement pageHeaderLogo;
+    private WebElement pageHeaderLogo;
 
     @FindBy(xpath = "//*[@class='page_header_head']/h1")
-    public WebElement pageHeaderHead;
+    private WebElement pageHeaderHead;
 
     public HomePage(WebDriver driver) {
         this.driver = driver;
@@ -44,6 +44,11 @@ public class HomePage {
                 }
         }
         return this;
+    }
+
+
+    public String getPageHeaderHeadText(){
+        return pageHeaderHead.getText();
     }
 }
 

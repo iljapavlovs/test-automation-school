@@ -1,4 +1,4 @@
-package test.automation.school;
+package test.automation.school.tests;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
@@ -22,7 +22,7 @@ public class BaseTest {
 
     private static final String APPLICATION_URL = ConfigReader.getConfigValue("application.url");
 
-    WebDriver driver;
+    protected WebDriver driver;
 
     @BeforeSuite(alwaysRun = true)
     public void beforeSuite() {
