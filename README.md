@@ -20,4 +20,5 @@
 1. Think about - how to make the tests Small, Atomic (One test - one clear goal, TC should verify only one functionality) and Autonomous. In order to do that, examine
  * how many features are tested
  * can or should those features be divided into separate test
+2. Try to use CSS Selectors instead of XPath
 ---
