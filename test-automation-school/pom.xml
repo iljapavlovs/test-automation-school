@@ -9,24 +9,38 @@
     <name>test-automation-school</name>
 
     <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>1.8</java.version>
+
+        <selenium.version>3.3.1</selenium.version>
+        <testng.version>6.11</testng.version>
         <allure.version>1.5.2</allure.version>
         <aspectj.version>1.8.9</aspectj.version>
         <maven-surefire-plugin.version>2.19.1</maven-surefire-plugin.version>
         <maven-compiler-plugin.version>3.5.1</maven-compiler-plugin.version>
         <allure-maven-plugin.version>2.5</allure-maven-plugin.version>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <browser>chrome</browser>
+        <threads>1</threads>
+        <remote>false</remote>
+        <seleniumGridURL/>
+        <platform/>
+        <browserVersion/>
+        <proxyEnabled>false</proxyEnabled>
+        <proxyHost/>
+        <proxyPort/>
     </properties>
 
     <dependencies>
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
-            <version>3.3.1</version>
+            <version>${selenium.version}</version>
         </dependency>
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
-            <version>6.11</version>
+            <version>${testng.version}</version>
         </dependency>
         <dependency>
             <groupId>ru.yandex.qatools.allure</groupId>
@@ -52,6 +66,17 @@
                     <argLine>
                         -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
                     </argLine>
+                    <systemPropertyVariables>
+                        <browser>${browser}</browser>
+                        <screenshotDirectory>${project.build.directory}/screenshots</screenshotDirectory>
+                        <remoteDriver>${remote}</remoteDriver>
+                        <gridURL>${seleniumGridURL}</gridURL>
+                        <desiredPlatform>${platform}</desiredPlatform>
+                        <desiredBrowserVersion>${browserVersion}</desiredBrowserVersion>
+                        <proxyEnabled>${proxyEnabled}</proxyEnabled>
+                        <proxyHost>${proxyHost}</proxyHost>
+                        <proxyPort>${proxyPort}</proxyPort>
+                    </systemPropertyVariables>
                 </configuration>
                 <dependencies>
                     <dependency>
@@ -66,8 +91,8 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>${maven-compiler-plugin.version}</version>
                 <configuration>
-                    <source>1.8</source>
-                    <target>1.8</target>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
                     <fork>true</fork>
                 </configuration>
             </plugin>
