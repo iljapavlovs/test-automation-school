@@ -2,6 +2,7 @@ package test.automation.school.pageobjects;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
@@ -43,6 +44,13 @@ public class SearchPage {
 	@FindBy(id = "sbtn")
 	private WebElement searchButton;
 
+	@FindBy(how = How.NAME, using = "topt[8][min]")
+	private WebElement minPriceTextInput;
+
+	@FindBy(how = How.NAME, using = "topt[8][max]")
+	@CacheLookup
+	private WebElement maxPriceTextInput;
+
 	public SearchPage(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
@@ -82,5 +90,20 @@ public class SearchPage {
 	public SearchResultPage performSearch() {
 		this.searchButton.click();
 		return new SearchResultPage(driver);
+	}
+
+	public SearchPage setPriceBoundaries(String minPrice, String maxPrice) {
+		setMinPrice(minPrice).setMaxPrice(maxPrice);
+		return this;
+	}
+
+	public SearchPage setMinPrice(String minPrice) {
+		minPriceTextInput.sendKeys(minPrice);
+		return this;
+	}
+
+	public SearchPage setMaxPrice(String maxPrice) {
+		maxPriceTextInput.sendKeys(maxPrice);
+		return this;
 	}
 }

@@ -34,16 +34,17 @@ public class TopMenuBar {
 	@FindBy(css = "#main_table a[href*='search']")
 	private WebElement searchLink;
 
-	public SearchPage goToSearchPage() {
-		this.searchLink.click();
-		return new SearchPage(driver);
-	}
-
 	public TopMenuBar(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 		wait = new WebDriverWait(driver, 5);
 		wait.until(ExpectedConditions.elementToBeClickable(searchLink));
+	}
+
+	public SearchPage goToSearchPage() {
+		wait.until(ExpectedConditions.elementToBeClickable(searchLink));
+		searchLink.click();
+		return new SearchPage(driver);
 	}
 
 	public TopMenuBar switchLangTo(Language language) {
@@ -60,5 +61,4 @@ public class TopMenuBar {
 		}
 		return this;
 	}
-
 }
