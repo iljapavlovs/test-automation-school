@@ -93,9 +93,9 @@ public class SearchResultPage {
         return this;
     }
 
-    public SearchPage goToExtendedSearch() {
+    public ExtendedSearchPage goToExtendedSearch() {
         extendedSearchLink.click();
-        return new SearchPage(driver);
+        return new ExtendedSearchPage(driver);
     }
 
     public SearchResultPage checkCheckboxes(int checkCount) {

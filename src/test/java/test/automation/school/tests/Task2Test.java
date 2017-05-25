@@ -4,6 +4,7 @@ package test.automation.school.tests;
 import org.testng.annotations.Test;
 import test.automation.school.BaseTest;
 import test.automation.school.enums.TimePeriod;
+import test.automation.school.pageobjects.ExtendedSearchPage;
 import test.automation.school.pageobjects.HomePage;
 import test.automation.school.pageobjects.SearchPage;
 import test.automation.school.pageobjects.SearchResultPage;
@@ -26,6 +27,7 @@ public class Task2Test extends BaseTest {
     private SearchPage searchPage;
     private SearchResultPage searchResultPage;
     private SelectedAdvertismentsPage selectedAdvertismentsPage;
+    private ExtendedSearchPage extendedSearchResultPage;
 
     @Test
     public void testSearch() throws Exception {
@@ -65,17 +67,17 @@ public class Task2Test extends BaseTest {
 //        System.out.println(listOfInts);
 //        System.out.println(WebDriverHelper.isListSortedInDescendingOrder(listOfInts));
 
-        searchPage = searchResultPage.selectDealType("Продажа")
+        extendedSearchResultPage = searchResultPage.selectDealType("Продажа")
                 .goToExtendedSearch();
 
-        searchResultPage = searchPage.setPriceBoundaries("0", "300")
+        searchResultPage = extendedSearchResultPage.setPriceBoundaries("0", "300")
+                .selectTimePeriod(TimePeriod.ALL_PERIOD)
                 .performSearch();
 
         List<String> searchedAdsTextList = searchResultPage.getSearchResultElementsText(3);
 
          selectedAdvertismentsPage = searchResultPage.checkCheckboxes(3)
                 .showSelectedAdvertisments();
-
 
 
         List<String> selectedAdsTextList = selectedAdvertismentsPage.getSelectedAdsElementsText(3);

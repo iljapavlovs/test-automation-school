@@ -15,8 +15,8 @@ import test.automation.school.utils.WebDriverHelper;
 import java.sql.Time;
 
 public class SearchPage {
-	private WebDriverWait wait;
-	private WebDriver driver;
+	protected WebDriverWait wait;
+	protected WebDriver driver;
 
 	// dont like the locator either, but couldn`t find a better option
 	@FindBy(xpath= "//*[contains(text(),'Искомое слово') or contains(text(),'Meklējamais vārds')]")
@@ -24,32 +24,31 @@ public class SearchPage {
 
 	// assume that locator is not dynamic
 	@FindBy(id = "ptxt")
-	private WebElement searchCriteriaInput;
+	protected WebElement searchCriteriaInput;
 
 	// assume that locator is not dynamic
 	@FindBy(name = "cid_0")
-	private WebElement subDivisionDropdown;
+	protected WebElement subDivisionDropdown;
 
 	// assume that locator is not dynamic
 	@FindBy(name = "cid_1")
-	private WebElement categoryDropdown;
+	protected WebElement categoryDropdown;
 
 	@FindBy(id = "s_region_select")
-	private WebElement locationDropdown;
+	protected WebElement locationDropdown;
 
 	// assume that locator is not dynamic
 	@FindBy(name= "pr")
-	private WebElement timePeriodDropdown;
+	protected WebElement timePeriodDropdown;
 
 	@FindBy(id = "sbtn")
-	private WebElement searchButton;
+	protected WebElement searchButton;
 
 	@FindBy(how = How.NAME, using = "topt[8][min]")
-	private WebElement minPriceTextInput;
+	protected WebElement minPriceTextInput;
 
 	@FindBy(how = How.NAME, using = "topt[8][max]")
-	@CacheLookup
-	private WebElement maxPriceTextInput;
+	protected WebElement maxPriceTextInput;
 
 	public SearchPage(WebDriver driver) {
 		this.driver = driver;
