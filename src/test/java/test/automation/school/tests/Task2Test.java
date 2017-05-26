@@ -32,44 +32,23 @@ public class Task2Test extends BaseTest {
     @Test
     public void testSearch() throws Exception {
         //Arrange
-        homePage  = new HomePage(getDriver());
+        homePage = new HomePage(getDriver());
         topMenuBar = new TopMenuBar(getDriver());
         topMenuBar.switchLangTo(RU);
         searchPage = topMenuBar.goToSearchPage();
 
-        //Act
-         searchResultPage = searchPage.searchForPhrase("Компьютер")
+        searchResultPage = searchPage.searchForPhrase("Компьютер")
                 .selectSubDivision("Электротехника")
                 .selectCategory("Компьютеры, оргтехника")
                 .selectLocation(RIGA)
                 .selectTimePeriod(TimePeriod.LAST_MONTH)
                 .performSearch();
 
-        searchResultPage.sortByPrice();
-
-
-        System.out.println(searchResultPage.getSearchResultElementCount());
-
-//        System.out.println(searchResultPage.getSearchElementsPriceStringList());
-        System.out.println(searchResultPage.getSearchElementsPriceList());
-
-        System.out.println(Helper.isListSortedInAscendingOrder(searchResultPage.getSearchElementsPriceList()));
-
-//        List<Integer>  listOfInts = new ArrayList<>();
-//        listOfInts.add(0, 1);
-//        listOfInts.add(0, 2);
-//        listOfInts.add(0, 3);
-//        listOfInts.add(0, 4);
-//        listOfInts.add(0, 5);
-//
-//
-//
-//        System.out.println(listOfInts);
-//        System.out.println(WebDriverHelper.isListSortedInDescendingOrder(listOfInts));
-
-        extendedSearchResultPage = searchResultPage.selectDealType("Продажа")
+        extendedSearchResultPage = searchResultPage.sortByPrice()
+                .selectDealType("Продажа")
                 .goToExtendedSearch();
 
+        //Act
         searchResultPage = extendedSearchResultPage.setPriceBoundaries("0", "300")
                 .selectTimePeriod(TimePeriod.ALL_PERIOD)
                 .performSearch();
@@ -79,8 +58,9 @@ public class Task2Test extends BaseTest {
          selectedAdvertismentsPage = searchResultPage.checkCheckboxes(3)
                 .showSelectedAdvertisments();
 
-
         List<String> selectedAdsTextList = selectedAdvertismentsPage.getSelectedAdsElementsText(3);
+
+        //Assert
         assertEquals(searchedAdsTextList.size(), selectedAdsTextList.size());
 
         Collections.sort(searchedAdsTextList);
@@ -88,8 +68,5 @@ public class Task2Test extends BaseTest {
         for (int i = 0; i < searchedAdsTextList.size(); i++) {
             assertTrue(searchedAdsTextList.get(i).contains(selectedAdsTextList.get(i)));
         }
-
     }
-
-
 }

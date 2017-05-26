@@ -18,7 +18,6 @@ public class PropertyLoader {
         } catch (IOException e) {
             System.out.println("Unable to load proeprty for file: " + fromResource);
         }
-
         return props.getProperty(name);
     }
 }

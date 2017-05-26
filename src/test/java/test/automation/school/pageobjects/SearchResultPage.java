@@ -38,15 +38,13 @@ public class SearchResultPage {
     @FindBy(xpath = "//*[text()='Расширенный поиск' or text()='Paplašināta meklēšana']")
     private WebElement extendedSearchLink;
 
-    //assume that it`s stable locator
-    @FindBy(css = "[name='mid[]'][type='checkbox']")
-    private WebElement searchResultCheckbox;
-
     @FindBy(id = "show_selected_a")
     private WebElement showSelectedAdvertismentsLink;
 
     //assume that it`s stable locator
     private static final String SEARCH_ITEMS_TEXT_CSS_SELECTOR = "[id*='dm_']";
+
+    private static final String CHECKBOX_LIST_LOCATOR= "[name='mid[]'][type='checkbox']";
 
     public SearchResultPage(WebDriver driver) {
         this.driver = driver;
@@ -100,7 +98,7 @@ public class SearchResultPage {
 
     public SearchResultPage checkCheckboxes(int checkCount) {
         for (int i = 0; i < checkCount; i++) {
-            this.searchResultElementsList.get(i).findElement(By.cssSelector("[name='mid[]'][type='checkbox']")).click();
+            this.searchResultElementsList.get(i).findElement(By.cssSelector(CHECKBOX_LIST_LOCATOR)).click();
         }
         return this;
     }

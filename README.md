@@ -22,3 +22,9 @@
  * can or should those features be divided into separate test
 2. Try to use CSS Selectors instead of XPath
 ---
+
+
+###  Runing tests from Maven
+```
+mvn clean test -Dbrowser=<browser>
+```

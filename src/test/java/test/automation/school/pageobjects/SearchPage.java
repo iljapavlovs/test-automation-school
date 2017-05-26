@@ -44,11 +44,7 @@ public class SearchPage {
 	@FindBy(id = "sbtn")
 	protected WebElement searchButton;
 
-	@FindBy(how = How.NAME, using = "topt[8][min]")
-	protected WebElement minPriceTextInput;
 
-	@FindBy(how = How.NAME, using = "topt[8][max]")
-	protected WebElement maxPriceTextInput;
 
 	public SearchPage(WebDriver driver) {
 		this.driver = driver;
@@ -91,18 +87,5 @@ public class SearchPage {
 		return new SearchResultPage(driver);
 	}
 
-	public SearchPage setPriceBoundaries(String minPrice, String maxPrice) {
-		setMinPrice(minPrice).setMaxPrice(maxPrice);
-		return this;
-	}
 
-	public SearchPage setMinPrice(String minPrice) {
-		minPriceTextInput.sendKeys(minPrice);
-		return this;
-	}
-
-	public SearchPage setMaxPrice(String maxPrice) {
-		maxPriceTextInput.sendKeys(maxPrice);
-		return this;
-	}
 }
