@@ -1,4 +1,4 @@
-package test.automation.school.module6.pageobjects;
+package test.automation.school.module5.pageobjects;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;

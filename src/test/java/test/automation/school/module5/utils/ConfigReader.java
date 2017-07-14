@@ -1,4 +1,4 @@
-package test.automation.school.module6.utils;
+package test.automation.school.module5.utils;
 
 import java.io.FileInputStream;
 import java.io.IOException;
