@@ -1,7 +1,7 @@
-package test.automation.school.module5.tests;
+package test.automation.school.module6.tests;
 
 import org.testng.annotations.Test;
-import test.automation.school.module5.pageobjects.HomePage;
+import test.automation.school.module6.pageobjects.HomePage;
 
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
