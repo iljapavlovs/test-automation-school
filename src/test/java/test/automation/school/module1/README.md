@@ -15,3 +15,17 @@
     - Поиск элементов на странице
     - Действия: click и sendKeys
     - Свойства элементов: getText и getAttribute
+    
+    
+# Tasks:    
+    1. otkrytj google i vvesti v poisk "cheese"
+    2. zajti na pervyj rezultat poiska
+    
+    1. zajti na gmail.com
+    2. nazatj knopku "compose"
+    3. v novom okne otoslatj sebe pismo 
+    4. zajti v otdel "sent" i dozdatjsa otsylki email`a
+    
+    
+    
+    
