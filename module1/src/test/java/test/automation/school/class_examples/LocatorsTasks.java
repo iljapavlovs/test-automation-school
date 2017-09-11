@@ -1,4 +1,4 @@
-package test.automation.school.module1.class_examples;
+package test.automation.school.class_examples;
 
 
 import org.openqa.selenium.By;
@@ -6,7 +6,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class GoogleSearch {
+public class LocatorsTasks {
+
     public static void main(String[] args) {
         System.setProperty("webdriver.chrome.driver", "path/to/chromedriver.exe");
         WebDriver driver = new ChromeDriver();
@@ -15,4 +16,6 @@ public class GoogleSearch {
         element.sendKeys("Cheese!");
         element.submit();
     }
+
+
 }

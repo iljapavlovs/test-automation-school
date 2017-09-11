@@ -1,4 +1,4 @@
-package test.automation.school.module3;
+package test.automation.school;
 
 
 import org.junit.Before;

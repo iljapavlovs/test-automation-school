@@ -1,4 +1,4 @@
-package test.automation.school.module1.api;
+package test.automation.school.api;
 
 
 import org.openqa.selenium.By;
