@@ -18,3 +18,18 @@
     - Произвольные условия ожидания
     - StaleElementReferenceException и борьба с ним
     - Неудачные попытки как альтернатива ожиданиям
+    
+    
+    //        File file = new File("C:\\tools\\Firefox\\", "firefox.exe");
+    //        if (file.exists()) {
+    //            System.setProperty("webdriver.firefox.bin", "C:\\tools\\Firefox\\firefox.exe");
+    //        }
+    
+    
+    
+            DesiredCapabilities caps = new FirefoxOptions()
+                    .setProfile(new FirefoxProfile())
+                    .addTo(DesiredCapabilities.firefox());
+                    
+                    
+                            System.setProperty("webdriver.gecko.driver", "src/test/resources/drivers/geckodriver-v0.17.0-win32/geckodriver.exe");
