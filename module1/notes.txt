@@ -12,3 +12,30 @@ or assign to abstract parent class, which is extended by the object`s class
 
 
 * Closing browsers - in AfterMethod or in AfetrClass. also discuss in parallel execution - not possible run parallel if AfterClass is used.
+
+
+
+
+
+*
+So if you find yourself with a test suite that hard to maintain,  slow, frequently broken - stop. Think about what are you doing,. Why you are doing this. Could we replicate this level of confidence with smaller tests
+
+only e2e. not all tests need to be Selenium!
+
+
+"Implicit waits are terrible mistake I have made and I apologize for them!"
+
+Avoid using implicit wait if you possible can, especcialy with Explicit waits
+
+
+Implicit wait - if  you ask for an element and it`s not there, we`ll wait a little bit in case it`s about to arrive and we handed to you
+
+
+
+
+Page Objects - dont auto generate page objects. Thinks about what they are for
+They are for to:
+1. Model services that  your pages or components of pages offer
+2. Make your tests clearer and easier to maintain
+
+Rule of thumb - don`t expose selenium api`s from it
