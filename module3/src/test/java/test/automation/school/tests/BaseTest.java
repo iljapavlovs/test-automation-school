@@ -4,8 +4,7 @@ import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -26,20 +25,12 @@ public class BaseTest {
 
     @BeforeSuite(alwaysRun = true)
     public void beforeSuite() {
-//        System.setProperty("webdriver.chrome.driver", "src\\main\\resources\\chromedriver.exe");
-
-        File file = new File("C:\\tools\\Firefox\\", "firefox.exe");
-        if (file.exists()) {
-            System.setProperty("webdriver.firefox.bin", "C:\\tools\\Firefox\\firefox.exe");
-        }
+        System.setProperty("webdriver.chrome.driver", "../drivers/chromedriver-v2.30-win32/chromedriver.exe");
     }
 
     @BeforeMethod(alwaysRun = true)
     public void setup() {
-//        driver = new ChromeDriver();
-
-        FirefoxOptions options = new FirefoxOptions().setLegacy(true);
-        driver = new FirefoxDriver(options);
+        driver = new ChromeDriver();
 
         driver.get(APPLICATION_URL);
         driver.manage().window().maximize();

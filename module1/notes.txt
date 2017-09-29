@@ -13,6 +13,12 @@ or assign to abstract parent class, which is extended by the object`s class
 
 * Closing browsers - in AfterMethod or in AfetrClass. also discuss in parallel execution - not possible run parallel if AfterClass is used.
 
+Selenium Grid:
+    * each new webdriver initialization creates a new session, whcih in turn
+    * show example how to use SwissRe Selenium grid
+        * Videos, desiredcapabilities
+        * UnreachableBrowserExc SessionNotCreated
+
 
 
 
@@ -31,7 +37,7 @@ Avoid using implicit wait if you possible can, especcialy with Explicit waits
 Implicit wait - if  you ask for an element and it`s not there, we`ll wait a little bit in case it`s about to arrive and we handed to you
 
 
-
+projtis po IDEA - sprositj chto uze znajut i chto nado znatj!
 
 Page Objects - dont auto generate page objects. Thinks about what they are for
 They are for to:
@@ -39,3 +45,10 @@ They are for to:
 2. Make your tests clearer and easier to maintain
 
 Rule of thumb - don`t expose selenium api`s from it
+
+
+
+* Я веду к тому, что "писать testable code" - это прямая обязанность инженера который думает о QA,
+о качестве продукта - не важно программист он или автоматизатор. Фронтенд без адекватных атрибутов - это не тестебл код,
+который в разы ухудшает эффективность автоматизации - которая и нужна то в первую очередь - именно для программистов -
+что бы как можно быстрее давать им фидбек о том - что они там наменяли.
