@@ -17,9 +17,7 @@ public class WebElementActionTest {
     // Tell about instance field
     private WebDriver driver;
 
-
-    //TODO - tests should be
-
+    //TODO - tests should use new browser instance for each test method
 
     //TODO 1 - inside of test fixture (test setup) - initialize WebDriver instance and navigate to http://automationpractice.com/
     //
@@ -27,8 +25,6 @@ public class WebElementActionTest {
     public void setUp() throws Exception {
         System.setProperty("webdriver.chrome.driver", "../drivers/chromedriver-v2.30-win32/chromedriver.exe");
         driver = new ChromeDriver();
-//        driver.get("http://automationpractice.com/index.php");
-
     }
     //TODO 1
 
@@ -76,7 +72,7 @@ public class WebElementActionTest {
     //TODO 4
 
 
-    //TODO 5 - input some value into search input field and submit the result. Verify that user is navigated to new page
+    //TODO 5 - Create TestNg Test method - input some value into search input field and submit the result. Verify that user is navigated to new page
     @Test
     public void testSubmitActions() throws Exception {
         WebElement searchInput = driver.findElement(By.id("search_query_top"));

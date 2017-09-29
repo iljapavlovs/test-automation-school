@@ -15,7 +15,7 @@ public class WebElementActionExample {
         WebDriver driver = new ChromeDriver();
         driver.get("http://www.google.com");
         WebElement searchInputElement = driver.findElement(By.name("q"));
-        searchInputElement.sendKeys("banana", Keys.ENTER);
+        searchInputElement.sendKeys("apple", Keys.ENTER);
 
 
         List<WebElement> elements = driver.findElements(By.className("g"));
@@ -23,8 +23,16 @@ public class WebElementActionExample {
 
         searchInputElement = driver.findElement(By.name("q"));
 
-        searchInputElement.sendKeys(Keys.chord(Keys.CONTROL, "a"), "new banana", Keys.ENTER);
+        //when using sendkeays multiple times, then it will append the text
+        searchInputElement.sendKeys(Keys.chord(Keys.CONTROL, "a"), "banana");
+        searchInputElement.sendKeys("new banana");
+        //need to clear the input
+        searchInputElement.clear();
 
-
+        searchInputElement.sendKeys("apple", Keys.ENTER);
+        List<WebElement> elementList = driver.findElements(By.className("g"));
+        System.out.println(elementList.size());
+        //chaining
+        elementList.get(0).findElement(By.tagName("a")).click();
     }
 }

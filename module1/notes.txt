@@ -9,6 +9,7 @@ driver.findElement(By.name("q")).click();
 * understand that it is possible to assign object reference to a variable which it the interface, whichis implemented by the object`s class
 or assign to parent class, which is extended by the object`s class
 or assign to abstract parent class, which is extended by the object`s class
+* understand usage of local var vs field and where they should be used in Junit Test(After -> test)
 
 
 * Closing browsers - in AfterMethod or in AfetrClass. also discuss in parallel execution - not possible run parallel if AfterClass is used.
