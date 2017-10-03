@@ -9,7 +9,15 @@
 * What `driver.findElement(...)` method returns?
 * What is the argument to `driver.findElement(...)` method?
 * Which class defines different locating mechanisms?
-* What is the difference when element is displayed or present?
+* What is the difference between element is displayed and element is present?
 * How to retrieve multiple elements at once? What would be variable type for referencing such Java object?
 * How to bypass _NoSuchElementException_ if there is no gurantee that element will be found on the page?
 * Which browser management strategy is better to use? Why?
+
+* What will happen if you will try to locate following element? (TIP - `display:none` sets element to be not rendered)
+What will happen if isDisplayed will be invoked on this element?
+```
+  <div id='elementId' style='display:none'>
+    ...
+  </div>
+```  

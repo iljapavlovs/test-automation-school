@@ -1,4 +1,4 @@
-package test.automation.school.classexamples;
+package test.automation.school.classexamples.webelement;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -15,24 +15,26 @@ public class WebElementActionExample {
         WebDriver driver = new ChromeDriver();
         driver.get("http://www.google.com");
         WebElement searchInputElement = driver.findElement(By.name("q"));
+
+        // sendKeys() and Selenium`s Keys enum
         searchInputElement.sendKeys("apple", Keys.ENTER);
-
-
-        List<WebElement> elements = driver.findElements(By.className("g"));
-        System.out.println(elements.size() > 0);
-
         searchInputElement = driver.findElement(By.name("q"));
 
-        //when using sendkeays multiple times, then it will append the text
+        //when using sendkeys multiple times, then it will append the text
         searchInputElement.sendKeys(Keys.chord(Keys.CONTROL, "a"), "banana");
         searchInputElement.sendKeys("new banana");
-        //need to clear the input
-        searchInputElement.clear();
 
-        searchInputElement.sendKeys("apple", Keys.ENTER);
+        // clear()
+        // need to clear the input first if smth already is written. Otherwise, text will be concatenated
+        searchInputElement.clear();
+        searchInputElement.sendKeys("apple");
+
+        //submit()
+        searchInputElement.submit();
         List<WebElement> elementList = driver.findElements(By.className("g"));
-        System.out.println(elementList.size());
-        //chaining
+
+        // click()
+        //chaining example
         elementList.get(0).findElement(By.tagName("a")).click();
     }
 }

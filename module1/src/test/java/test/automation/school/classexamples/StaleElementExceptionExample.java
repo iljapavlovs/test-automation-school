@@ -22,7 +22,7 @@ public class StaleElementExceptionExample {
         If this test fails, then an StaleElementReferenceException is thrown, and all future calls to this instance will fail.
          */
 
-        //following action will throw StaleElementReferenceException since previos action invoked page
+        //following action will throw StaleElementReferenceException since previous action invoked page
         element.sendKeys("new banana");
 
 

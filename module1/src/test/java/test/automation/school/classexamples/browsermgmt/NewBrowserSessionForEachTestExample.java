@@ -1,4 +1,4 @@
-package test.automation.school.classexamples;
+package test.automation.school.classexamples.browsermgmt;
 
 
 import org.openqa.selenium.By;
