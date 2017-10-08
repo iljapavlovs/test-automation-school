@@ -12,6 +12,7 @@ or assign to abstract parent class, which is extended by the object`s class
 * understand usage of local var vs field and where they should be used in Junit Test(After -> test)
 
 
+
 * Closing browsers - in AfterMethod or in AfetrClass. also discuss in parallel execution - not possible run parallel if AfterClass is used.
 
 Selenium Grid:
@@ -53,3 +54,22 @@ Rule of thumb - don`t expose selenium api`s from it
 о качестве продукта - не важно программист он или автоматизатор. Фронтенд без адекватных атрибутов - это не тестебл код,
 который в разы ухудшает эффективность автоматизации - которая и нужна то в первую очередь - именно для программистов -
 что бы как можно быстрее давать им фидбек о том - что они там наменяли.
+
+
+*rasskazatj pro KISS - keep it simple stupid - inoj raz luchshe napisatj prostoj iterator, chem
+
+
+* rasskazatj pro Паттерны проектирования в автоматизации тестирования - https://habrahabr.ru/company/jugru/blog/338836/
+
+* https://www.youtube.com/watch?v=iX7ptfdpJXY - tipizirovannye elementy
+* Simplest fw - selenide - https://www.youtube.com/watch?v=Q7fqTLOr2YE, https://www.youtube.com/watch?v=Q7fqTLOr2YE - kiss - keep it simple stupid, goal is to not to overengineer
+*NOTE - ne vsegda knopka javljaetjsa knopkoj v kontektset HTML
+ne vsegda input forma javljaetsja formoj v HTML
+* balanc mezdu dohodchivymi i abstrktnymi testami -> porog vhozdenija testirovshika (selenide)
+
+
+
+* tell about different browsers:
+** ff profile
+** setting executable env variable
+** options

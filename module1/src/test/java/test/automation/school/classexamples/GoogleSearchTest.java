@@ -25,9 +25,10 @@ public class GoogleSearchTest {
     @Test
     public void testSearch() throws Exception {
         WebElement element = driver.findElement(By.name("q"));
-        element.sendKeys("Cheese!");
+        element.sendKeys("cheese");
         element.submit();
-        assertTrue(driver.getTitle().contains("Cheese!"));
+//        assertTrue(driver.findElements(By.className("g")).get(0).getText().toLowerCase().contains("cheese"));
+        assertTrue(driver.getTitle().contains("cheese"));
     }
 
     @AfterMethod
