@@ -1,15 +1,18 @@
 * Best Practices - driver should be put under resources together with src
 *         //NOTE - you have to indicate all class names that are specified on the current element
           // This is contrary to CSS Selector where you can specify just one of the class names
+
 * understand that it is not necessary to write
   WebElement elementById = driver.findElement(By.id("search_query_top"));
   elementById.click();
 and you can just chain:
 driver.findElement(By.name("q")).click();
+
 * understand that it is possible to assign object reference to a variable which it the interface, whichis implemented by the object`s class
 or assign to parent class, which is extended by the object`s class
 or assign to abstract parent class, which is extended by the object`s class
 * understand usage of local var vs field and where they should be used in Junit Test(After -> test)
+* return type of a method
 
 
 

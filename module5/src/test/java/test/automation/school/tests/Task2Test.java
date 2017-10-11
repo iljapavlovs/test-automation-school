@@ -14,8 +14,8 @@ import test.automation.school.pageobjects.TopMenuBar;
 import java.util.Collections;
 import java.util.List;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertTrue;
 import static test.automation.school.enums.Language.RU;
 import static test.automation.school.enums.Location.RIGA;
 
