@@ -76,3 +76,10 @@ ne vsegda input forma javljaetsja formoj v HTML
 ** ff profile
 ** setting executable env variable
 ** options
+
+
+
+notes from minsk:
+* driver.getTitle
+* driver.getCurrentUrl
+* driver size

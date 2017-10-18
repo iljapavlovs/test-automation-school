@@ -4,7 +4,7 @@ package atbildes;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -35,8 +35,8 @@ public class LocatorsTest {
 
     @BeforeClass
     public void setUp() throws Exception {
-        System.setProperty("webdriver.chrome.driver", "../drivers/chromedriver-v2.30-win32/chromedriver.exe");
-        driver = new ChromeDriver();
+        System.setProperty("webdriver.gecko.driver", "../drivers/geckodriver-v0.17.0-win32/geckodriver.exe");
+        driver = new FirefoxDriver();
         driver.get("http://automationpractice.com/index.php");
     }
 
@@ -89,7 +89,8 @@ public class LocatorsTest {
     public void locateElementByLinkTextTest() throws Exception {
         //TODO 5 - locate "T-Shirts" element by link text
         // NOTE - linkText() is case sensitive
-        WebElement elementByLinkText = driver.findElement(By.linkText("T-SHIRTS"));
+        // a bug - diff behaviour in FF and Chrome
+        WebElement elementByLinkText = driver.findElement(By.linkText("T-shirts"));
 
         Assert.assertTrue(elementByLinkText.isDisplayed());
         //TODO 5

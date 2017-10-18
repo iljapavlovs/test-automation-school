@@ -4,7 +4,7 @@ package test.automation.school;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -14,8 +14,8 @@ public class SeleniumExample {
         // Create a new instance of the Chrome driver
         // Notice that the remainder of the code relies on the interface,
         // not the implementation.
-        System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/chromedriver-v2.30-win32/chromedriver.exe");
-        WebDriver driver = new ChromeDriver();
+        System.setProperty("webdriver.gecko.driver", "drivers/geckodriver-v0.17.0-win32/geckodriver.exe");
+        WebDriver driver = new FirefoxDriver();
 
         // And now use this to visit Google
         driver.get("http://www.google.com");
