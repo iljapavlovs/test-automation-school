@@ -1,4 +1,4 @@
-package test.automation.school.classexamples;
+package test.automation.school.classexamples.webdriver;
 
 
 import org.openqa.selenium.By;
