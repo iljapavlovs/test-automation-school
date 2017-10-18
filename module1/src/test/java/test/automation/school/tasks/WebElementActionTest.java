@@ -17,16 +17,20 @@ public class WebElementActionTest {
 
 
     //TODO 3 - Create TestNg Test method which navigates to Contact info page (click()) and verify that user is navigated to other page
+    // NOTE - in order to verify that user has been navigated to new page, you can use 'driver.getTitle()', however this will work only for non Single Page Applications
 
     //TODO 3
 
 
     //TODO 4 -Create TestNg Test method which inputs some value into search input field and then clear the inputted text. Try do it in 2 possible ways.
+    //TODO 4 - Also verify inputted text after each input action.
+
 
     //TODO 4
 
 
     //TODO 5 - Create TestNg Test method - input some value into search input field and submit the result. Verify that user is navigated to new page
+    // NOTE - in order to verify that user has been navigated to new page, you can use 'driver.getTitle()', however this will work only for non Single Page Applications
 
     //TODO 5
 
