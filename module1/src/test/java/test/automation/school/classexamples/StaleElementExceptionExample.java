@@ -4,17 +4,21 @@ package test.automation.school.classexamples;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class StaleElementExceptionExample {
 
-    public static void main(String[] args) {
-        System.setProperty("webdriver.chrome.driver", "drivers/chromedriver-v2.30-win32/chromedriver.exe");
-        WebDriver driver = new ChromeDriver();
+    public static void main(String[] args) throws InterruptedException {
+
+        System.setProperty("webdriver.gecko.driver", "drivers/geckodriver-v0.17.0-win32/geckodriver.exe");
+        WebDriver driver = new FirefoxDriver();
         driver.get("http://www.google.com");
         WebElement element = driver.findElement(By.name("q"));
         element.sendKeys("banana");
         element.submit();
+
+        //wait for page to load
+        Thread.sleep(3000);
 
         /* *WebElement*
         All method calls will do a freshness check to ensure that the element reference is still valid.
