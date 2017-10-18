@@ -1,4 +1,4 @@
-package test.automation.school.classexamples;
+package test.automation.school.classexamples.elementpresence;
 
 
 import org.openqa.selenium.By;
@@ -19,6 +19,8 @@ public class NoSuchElementExceptionExample {
         // following code will not be executed due to thrown exception
         System.out.println(notDisplayedButPresentElement.isDisplayed());
 
+
+        //TODO - Don`t forget to close the browser manually
     }
 
 }

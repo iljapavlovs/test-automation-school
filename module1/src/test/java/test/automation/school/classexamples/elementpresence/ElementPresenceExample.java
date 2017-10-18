@@ -1,4 +1,4 @@
-package test.automation.school.classexamples;
+package test.automation.school.classexamples.elementpresence;
 
 
 import org.openqa.selenium.By;
@@ -18,6 +18,8 @@ public class ElementPresenceExample {
         //returns 'false'
         System.out.println(notDisplayedButPresentElement.isDisplayed());
 
+
+        //TODO - Don`t forget to close the browser manually
     }
 
 }
