@@ -6,15 +6,18 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.*;
 
 import static org.testng.Assert.assertEquals;
 
 public class WebElementActionTest {
-    // Tell about instance field
+
+
+    // * All fixtures should be placed is in the beginning of the test
+    // * Use variables for making your tests more DRY (Dont Repeat Yourself)
+
+    // * WebDriver should be made as a instance variable
     private WebDriver driver;
 
     //TODO - tests should use new browser instance for each test method
@@ -23,23 +26,22 @@ public class WebElementActionTest {
     //
     @BeforeClass
     public void setUp() throws Exception {
-        System.setProperty("webdriver.chrome.driver", "../drivers/chromedriver-v2.30-win32/chromedriver.exe");
-        driver = new ChromeDriver();
+        System.setProperty("webdriver.gecko.driver", "../drivers/geckodriver-v0.17.0-win32/geckodriver.exe");
     }
     //TODO 1
 
 
     @BeforeMethod
     public void setUpBeforeMethod() throws Exception {
+        driver = new FirefoxDriver();
         driver.get("http://automationpractice.com/index.php");
     }
 
 
     //TODO 2 - Destroy WebDriver instance in a test fixture (test test teardown)
-    @AfterClass
+    @AfterMethod
     public void tearDown() throws Exception {
         driver.quit();
-
     }
     //TODO 2
 
@@ -63,11 +65,11 @@ public class WebElementActionTest {
         searchInput.sendKeys(inputText);
         assertEquals(searchInput.getAttribute("value"), inputText);
         searchInput.clear();
-        assertEquals(searchInput.getText(), "");
+        assertEquals(searchInput.getAttribute("value"), "");
         searchInput.sendKeys(inputText);
         assertEquals(searchInput.getAttribute("value"), inputText);
         searchInput.sendKeys(Keys.chord(Keys.CONTROL, "a"), Keys.DELETE);
-        assertEquals(searchInput.getText(), "");
+        assertEquals(searchInput.getAttribute("value"), "");
     }
     //TODO 4
 
