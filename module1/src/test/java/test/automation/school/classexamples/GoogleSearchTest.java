@@ -13,7 +13,7 @@ import static org.testng.Assert.assertTrue;
 
 public class GoogleSearchTest {
 
-    WebDriver driver;
+    private WebDriver driver;
 
     @BeforeMethod
     public void setUp() throws Exception {

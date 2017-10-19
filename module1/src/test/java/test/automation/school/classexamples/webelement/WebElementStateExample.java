@@ -11,17 +11,6 @@ public class WebElementStateExample {
         System.setProperty("webdriver.chrome.driver", "drivers/chromedriver-v2.30-win32/chromedriver.exe");
         WebDriver driver = new ChromeDriver();
 
-
-//        File file = new File("C:\\tools\\Firefox\\", "firefox.exe");
-//        if (file.exists()) {
-//            System.setProperty("webdriver.firefox.bin", "C:\\tools\\Firefox\\firefox.exe");
-//        }
-//
-//
-//        System.setProperty("webdriver.gecko.driver", "drivers/geckodriver-v0.17.0-win32/geckodriver.exe");
-//        WebDriver driver = new FirefoxDriver();
-
-
         driver.get("http://www.google.com");
 
         WebElement searchInputElement = driver.findElement(By.name("q"));
@@ -65,7 +54,6 @@ public class WebElementStateExample {
         System.out.println("Is dropdown enabled: " + statesDropdown.isEnabled());
         System.out.println("isSelected() :" + disableStatesDropdownCheckbox.isSelected());
         System.out.println("getCssValue(visibility): " + statesDropdown.getCssValue("visibility"));
-        System.out.println("getCssValue(opacity): " + statesDropdown.getCssValue("opacity"));
         System.out.println("getCssValue(opacity): " + statesDropdown.getCssValue("opacity"));
 
 
