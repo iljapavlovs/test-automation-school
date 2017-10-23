@@ -37,8 +37,8 @@ public class WebElementStateTest {
 
 
     //TODO 6 - Create TestNg Test method which navigates http://the-internet.herokuapp.com/checkboxes
-    //TODO 6 - check that header is equal to "Checkboxes"
-    //TODO 6 - think how to reatrieve all visible text on the page.
+    //TODO 6 - check that header text is equal to "Checkboxes"
+    //TODO 6 - think how to retrieve all visible text on the page and verify it`s content
 
     //TODO 6
 

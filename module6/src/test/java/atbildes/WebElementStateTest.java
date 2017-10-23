@@ -4,7 +4,7 @@ package atbildes;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
@@ -12,10 +12,7 @@ import org.testng.annotations.Test;
 
 import java.util.List;
 
-import static org.testng.Assert.assertEquals;
-import static org.testng.Assert.assertFalse;
-import static org.testng.Assert.assertNull;
-import static org.testng.Assert.assertTrue;
+import static org.testng.Assert.*;
 
 public class WebElementStateTest {
 
@@ -28,14 +25,14 @@ public class WebElementStateTest {
     //
     @BeforeClass
     public void setUp() throws Exception {
-        System.setProperty("webdriver.chrome.driver", "../drivers/chromedriver-v2.30-win32/chromedriver.exe");
+        System.setProperty("webdriver.gecko.driver", "../drivers/geckodriver-v0.17.0-win32/geckodriver.exe");
     }
     //TODO 1
 
 
     @BeforeMethod
     public void setUpBeforeMethod() throws Exception {
-        driver = new ChromeDriver();
+        driver = new FirefoxDriver();
 
     }
 
@@ -64,14 +61,14 @@ public class WebElementStateTest {
 
 
     //TODO 4 - Create TestNg Test method which navigates http://the-internet.herokuapp.com/checkboxes
-    //TODO 4 - test checkbox selected feature using 'isSelected()' method
+    //TODO 4 - test checkbox "selected" and "unselected" feature using 'isSelected()' method. You can check it on one checkbox
     @Test
     public void isSelectedTest() throws Exception {
         driver.get("http://the-internet.herokuapp.com/checkboxes");
         WebElement firstCheckBox = driver.findElement(By.xpath("//*[@id='checkboxes']/input[1]"));
         assertFalse(firstCheckBox.isSelected());
         firstCheckBox.click();
-        assertTrue(Boolean.parseBoolean(firstCheckBox.getAttribute("checked")));
+        assertTrue(firstCheckBox.isSelected());
         firstCheckBox.click();
         assertFalse(firstCheckBox.isSelected());
     }
@@ -79,7 +76,7 @@ public class WebElementStateTest {
 
 
     //TODO 5 - Create TestNg Test method which navigates http://the-internet.herokuapp.com/checkboxes
-    //TODO 5 - test checkbox feature for 'checking' and 'unchecking' using 'getAttribute()' method
+    //TODO 5 - test checkbox feature for 'checking' and 'unchecking' using 'getAttribute()' method. You can check it on one checkbox
     @Test
     public void getAttributeTest() throws Exception {
         driver.get("http://the-internet.herokuapp.com/checkboxes");
@@ -87,6 +84,7 @@ public class WebElementStateTest {
         assertNull(firstCheckBox.getAttribute("checked"));
         firstCheckBox.click();
         assertTrue(Boolean.parseBoolean(firstCheckBox.getAttribute("checked")));
+        assertEquals(firstCheckBox.getAttribute("checked"), "true");
         firstCheckBox.click();
         assertNull(firstCheckBox.getAttribute("checked"));
     }
@@ -94,8 +92,8 @@ public class WebElementStateTest {
 
 
     //TODO 6 - Create TestNg Test method which navigates http://the-internet.herokuapp.com/checkboxes
-    //TODO 6 - check that header is equal to "Checkboxes"
-    //TODO 6 - think how to reatrieve all visible text on the page.
+    //TODO 6 - check that header text is equal to "Checkboxes"
+    //TODO 6 - think how to retrieve all visible text on the page and verify it`s content
     @Test
     public void getTextTest() throws Exception {
         driver.get("http://the-internet.herokuapp.com/checkboxes");
@@ -106,6 +104,7 @@ public class WebElementStateTest {
 
         //getText() from sub-elements (child elements)
         WebElement divElement = driver.findElement(By.cssSelector("div.example"));
+        System.out.println(driver.findElement(By.cssSelector("div.example")));
 
         assertEquals(divElement.getText(), "Checkboxes\n" +
                 "checkbox 1\n" +
@@ -116,7 +115,6 @@ public class WebElementStateTest {
 
     //TODO 7 - Create TestNg Test method which navigates https://jedwatson.github.io/react-select/
     //TODO 7 - veri
-    //TODO 7 - think how to reatrieve all visible text on the page.
     @Test
     public void dropdownTest() throws Exception {
         driver.get("https://jedwatson.github.io/react-select/");
@@ -140,8 +138,8 @@ public class WebElementStateTest {
     //TODO 7
 
 
-    //TODO 6 - Create TestNg Test method which navigates http://akveo.com/blur-admin-mint/#/ui/typography
-    //TODO 6 - verify that red text paragraph is actually red
+    //TODO 8 - Create TestNg Test method which navigates http://akveo.com/blur-admin-mint/#/ui/typography
+    //TODO 8 - verify that red text paragraph is actually red
     // to check rgba use https://www.hexcolortool.com/#e85454 or other sites
     @Test
     public void getCssValue() throws Exception {
@@ -152,7 +150,7 @@ public class WebElementStateTest {
             e.printStackTrace();
         }
         WebElement redText = driver.findElement(By.cssSelector(".red-text p"));
-        assertEquals(redText.getCssValue("color"), "rgba(232, 86, 86, 1)");
+        assertEquals(redText.getCssValue("color"), "rgb(232, 86, 86)");
     }
 
 }
