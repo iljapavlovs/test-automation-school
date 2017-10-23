@@ -83,3 +83,22 @@ notes from minsk:
 * driver.getTitle
 * driver.getCurrentUrl
 * driver size
+
+* add slides about how to write clean code http://www.garshol.priv.no/blog/105.html
+
+* pokazatj primer s Milanovich incorrect approach
+
+
+
+* https://github.com/Fulcrum81/SeleniumTraining
+
+* File upload and download example - https://github.com/Fulcrum81/FileUploadDownload
+* simple fw with page objects, but without page factory (BY as fields) - https://github.com/Fulcrum81/TestTemplate
+* one driver per tests - https://github.com/Fulcrum81/WebDriverSingletonTemplate,https://github.com/Fulcrum81/WebDriverSingletonTemplate/blob/master/src/main/java/base/DriverContainer.java
+* putting locators into separate file - https://github.com/Fulcrum81/WebDriverSingletonTemplate/blob/master/src/main/resources/locators.properties, https://github.com/Fulcrum81/WebDriverSingletonTemplate/blob/master/src/main/java/helpers/Locators.java
+* working with Tables - https://github.com/Fulcrum81/WebTableExample/blob/master/src/test/java/TableTest.java
+
+
+
+sites to automate -
+* http://todomvc.com/examples/angularjs/#

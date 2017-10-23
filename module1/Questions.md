@@ -1,3 +1,25 @@
+* What will be returned (method return type) by each of the following methods:
+```
+    private WebElement getInput() {
+        return driver.findElement(By.tagName("input"));
+    }
+
+    private String getInput() {
+        return "<input></input>";
+    }
+
+    private List<WebElement> getInputList() {
+        return driver.findElements(By.tagName("input"));
+    }
+
+    private List<String> getInputList() {
+        List<String> list = new ArrayList<>();
+        list.add("<input></input>");
+        list.add("<input></input>");
+        return list;
+    }
+```
+
 * Will this snippet code will be executed if element is not found on the page? If not, then why?
     ```
     driver.findElement(By.id("some_id").isDisplayed())
