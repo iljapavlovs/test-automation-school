@@ -117,3 +117,6 @@ sites to automate -
 
 
 * already written selenium tests for the-internet https://github.com/DevvratGotham/the-internet-swt
+
+* Clean code  - https://code.tutsplus.com/tutorials/top-15-best-practices-for-writing-super-readable-code--net-8118
+https://dev.to/mohitrajput987/importance-of-writing-clean-code
