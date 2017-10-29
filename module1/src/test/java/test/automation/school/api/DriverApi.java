@@ -12,7 +12,7 @@ import java.util.concurrent.TimeUnit;
 public class DriverApi {
     public static void main(String[] args) {
 
-        System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/chromedriver-v2.30-win32/chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "drivers/chromedriver-v2.30-win32/chromedriver.exe");
         WebDriver driver = new ChromeDriver();
 
 

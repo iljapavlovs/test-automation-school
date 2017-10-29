@@ -25,9 +25,11 @@ public class ExplicitWaitExample {
         WebDriverWait wait = new WebDriverWait(driver, 5);
 
         // providing condition to wait for into until() method
-        wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("#finish")));
+        WebElement element = wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("#finish")));
 
-        WebElement helloWorldText = driver.findElement(By.cssSelector("#finish"));
-        System.out.println("Is element displayed: " + helloWorldText.isDisplayed());
+//        WebElement helloWorldText = driver.findElement(By.cssSelector("#finish"));
+//        System.out.println("Is element displayed: " + helloWorldText.isDisplayed());
+
+        System.out.println("Is element displayed: " + element.isDisplayed());
     }
 }

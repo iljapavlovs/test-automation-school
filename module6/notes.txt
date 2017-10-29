@@ -88,6 +88,8 @@ notes from minsk:
 
 * pokazatj primer s Milanovich incorrect approach
 
+* how to prepare precondition via REST in Selenium - https://github.com/mwinteringham/api-webdriver-harmony/blob/master/src/test/java/BugPageTest.java
+
 
 
 * https://github.com/Fulcrum81/SeleniumTraining
@@ -102,3 +104,6 @@ notes from minsk:
 
 sites to automate -
 * http://todomvc.com/examples/angularjs/#
+
+
+* add static

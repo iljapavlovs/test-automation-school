@@ -16,14 +16,14 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
 
-        <selenium.version>3.3.1</selenium.version>
+        <selenium.version>3.4.0</selenium.version>
         <testng.version>6.11</testng.version>
         <allure.version>1.5.2</allure.version>
         <aspectj.version>1.8.9</aspectj.version>
         <maven-surefire-plugin.version>2.19.1</maven-surefire-plugin.version>
         <maven-compiler-plugin.version>3.5.1</maven-compiler-plugin.version>
         <allure-maven-plugin.version>2.5</allure-maven-plugin.version>
-        <browser>chrome</browser>
+        <browser>firefox</browser>
         <threads>1</threads>
         <remote>false</remote>
         <seleniumGridURL/>

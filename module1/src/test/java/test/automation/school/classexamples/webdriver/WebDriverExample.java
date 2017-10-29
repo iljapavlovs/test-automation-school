@@ -3,13 +3,13 @@ package test.automation.school.classexamples.webdriver;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class WebDriverExample {
 
     public static void main(String[] args) {
-        System.setProperty("webdriver.chrome.driver", "drivers/chromedriver-v2.30-win32/chromedriver.exe");
-        WebDriver driver = new ChromeDriver();
+        System.setProperty("webdriver.gecko.driver", "drivers/geckodriver-v0.17.0-win32/geckodriver.exe");
+        WebDriver driver = new FirefoxDriver();
         driver.get("http://the-internet.herokuapp.com/tables");
 
         //There are bunch of elements with link text 'delete'
