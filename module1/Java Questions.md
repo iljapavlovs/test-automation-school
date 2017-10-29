@@ -66,3 +66,12 @@ public class GoogleSearchTest {
 ```
 
    * **Answer**: 1 - WebElement, 2 - a string _"\<input>\</input>"_, 3 - list of WebElements, 4 - List of strings
+   
+* Is the next String **value** comparison valid?
+``` 
+String a = "a";
+String b = "b";
+if (a == b){
+//...
+}
+```

@@ -26,23 +26,21 @@ public class Homework2 {
 
         System.setProperty("webdriver.firefox.bin", "C:\\tools\\Firefox\\firefox.exe");
         System.setProperty("webdriver.gecko.driver", "../drivers/geckodriver-v0.17.0-win32/geckodriver.exe");
-////        todo 1. Открыть браузер и развернуть на весь экран.
         driver = new FirefoxDriver();
         driver.manage().window().maximize();
-//        todo 2. Зайти на ss.com
         driver.get("http://juliemr.github.io/protractor-demo/");
     }
 
+    //* todo 1. Write simple test that navigates to http://juliemr.github.io/protractor-demo/ and checks its title
     @Test
     public void testTitle() throws Exception {
-//* todo 1. Write simple test that navigates to http://juliemr.github.io/protractor-demo/ and checks its title
         assertEquals(driver.getTitle(), "Super Calculator");
     }
 
-
+    //todo 2. Sum up some two values and wait for the result * Use Thread.sleep() to wait for element to load (but use it only ofr this homework,
+    // since "Waiting" topic will be discussed in upcoming sessions)
     @Test
     public void testMathAction() throws Exception {
-        //todo 2. Sum up some two values and wait for the result * Use Thread.sleep() to wait for element to load (but use it only ofr this homework, since "Waiting" topic will be discussed in upcoming sessions)
         WebElement firstNumberInput = driver.findElement(By.cssSelector("[ng-model='first']"));
         WebElement secondNumberInput = driver.findElement(By.cssSelector("[ng-model='second']"));
         WebElement goButton = driver.findElement(By.id("gobutton"));
@@ -57,9 +55,9 @@ public class Homework2 {
         assertEquals(resultLabelText, "3");
     }
 
+    //todo 3. Do multiple mathematical actions and count the number of actions
     @Test
     public void testListOfActionsPerfomed() throws Exception {
-        //todo 3. Do multiple mathematical actions and count the number of actions
         WebElement firstNumberInput = driver.findElement(By.cssSelector("[ng-model='first']"));
         WebElement secondNumberInput = driver.findElement(By.cssSelector("[ng-model='second']"));
         WebElement goButton = driver.findElement(By.id("gobutton"));

@@ -99,11 +99,21 @@ notes from minsk:
 * one driver per tests - https://github.com/Fulcrum81/WebDriverSingletonTemplate,https://github.com/Fulcrum81/WebDriverSingletonTemplate/blob/master/src/main/java/base/DriverContainer.java
 * putting locators into separate file - https://github.com/Fulcrum81/WebDriverSingletonTemplate/blob/master/src/main/resources/locators.properties, https://github.com/Fulcrum81/WebDriverSingletonTemplate/blob/master/src/main/java/helpers/Locators.java
 * working with Tables - https://github.com/Fulcrum81/WebTableExample/blob/master/src/test/java/TableTest.java
+* Firefox profile: https://github.com/DevvratGotham/the-internet-swt/blob/master/src/io/github/devvratplus/theinternet/testcases/HandlingDownloads.java
+		tempFolder = TestUtils.createTempDirectory();
+		System.out.println("Using temperarory directory > " + tempFolder);
 
-
+		firefoxProfile = (new ProfilesIni()).getProfile("seleniumuser");
+		firefoxProfile.setPreference("browser.download.dir",
+				tempFolder.getAbsolutePath());
+		firefoxProfile.setPreference("browser.download.folderList", 2);
+		firefoxProfile.setPreference("pdfjs.disabled", true);
 
 sites to automate -
 * http://todomvc.com/examples/angularjs/#
 
 
 * add static
+
+
+* already written selenium tests for the-internet https://github.com/DevvratGotham/the-internet-swt
