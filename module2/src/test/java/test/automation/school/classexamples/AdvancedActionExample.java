@@ -22,13 +22,16 @@ public class AdvancedActionExample {
         // Locate element which
         WebElement imageElement = driver.findElement(By.cssSelector(".figure img"));
 
-        // Create object of actions class
+        // Create object of Actions class
         Actions builder = new Actions(driver);
 
+        // Configure the action
         builder.moveToElement(imageElement)
                 .moveToElement(driver.findElement(By.linkText("View profile")))
                 .click()
+                //get all actions as one
                 .build()
+                //perform the action
                 .perform();
 
 
