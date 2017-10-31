@@ -7,6 +7,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -22,7 +24,6 @@ public class AdvancedActionsTest {
 
     @BeforeMethod
     public void setUp() throws Exception {
-        System.setProperty("webdriver.firefox.bin", "C:\\tools\\Firefox\\firefox.exe");
         System.setProperty("webdriver.gecko.driver", "../drivers/geckodriver-v0.17.0-win32/geckodriver.exe");
         driver = new FirefoxDriver();
 
@@ -33,6 +34,7 @@ public class AdvancedActionsTest {
         driver.quit();
     }
 
+    //TODO - does not work with FF 52 and
     @Test
     public void hoverOverTest() throws Exception {
 
@@ -47,7 +49,7 @@ public class AdvancedActionsTest {
         Actions builder = new Actions(driver);
 
         builder.moveToElement(imageElement)
-                .moveToElement(driver.findElement(By.linkText("View profile")))
+                .moveToElement((new WebDriverWait(driver, 3).until(ExpectedConditions.visibilityOf(driver.findElement(By.linkText("View profile"))))))
                 .click()
                 .build()
                 .perform();

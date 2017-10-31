@@ -30,7 +30,7 @@ public enum DriverType implements DriverSetup {
         }
 
         public WebDriver getWebDriverObject(DesiredCapabilities capabilities) {
-            System.setProperty("webdriver.firefox.bin", "C:\\tools\\Firefox\\firefox.exe");
+//            System.setProperty("webdriver.firefox.bin", "C:\\tools\\Firefox\\firefox.exe");
 
             DesiredCapabilities caps = new FirefoxOptions()
                     .setLegacy(true)

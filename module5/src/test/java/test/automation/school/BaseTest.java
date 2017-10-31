@@ -1,11 +1,7 @@
 package test.automation.school;
 
 import org.openqa.selenium.WebDriver;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeSuite;
-import org.testng.annotations.Listeners;
+import org.testng.annotations.*;
 import test.automation.school.core.DriverFactory;
 import test.automation.school.listeners.ScreenshotListener;
 import test.automation.school.utils.PropertyLoader;
@@ -52,6 +48,10 @@ public class BaseTest {
 
     @BeforeMethod(alwaysRun = true)
     public void setup() throws Exception {
+
+        // needed if running on SwissRe browsers due to default page and strange loading
+        Thread.sleep(5000);
+
         getDriver().get(APPLICATION_URL);
         getDriver().manage().window().maximize();
     }

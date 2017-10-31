@@ -110,6 +110,10 @@ public class DropdownTest {
             }
         }
 
+        // OR use XPATH - //*[text()='Fast'][ancestor::*[@id='speed-menu']]
+
+
+
         assertEquals(driver.findElement(By.cssSelector("#speed-button .ui-selectmenu-text")).getText(), speedOption);
         //TODO 4
     }
