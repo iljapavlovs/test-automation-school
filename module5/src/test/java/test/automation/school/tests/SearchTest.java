@@ -20,6 +20,7 @@ public class SearchTest extends BaseTest {
 
     @Test
     public void testSearch() throws Exception {
+
         //Arrange
         homePage = new HomePage(getDriver());
         topMenuBar = new TopMenuBar(getDriver());

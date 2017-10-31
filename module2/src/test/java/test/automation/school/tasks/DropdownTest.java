@@ -29,7 +29,6 @@ public class DropdownTest {
     public void selectByTextTest() throws Exception {
         //TODO 1 - select dropdown option by "Option 2" text and verify that this element was selected
 
-        //TODO 1
     }
 
 
@@ -37,7 +36,6 @@ public class DropdownTest {
     public void selectByValueTest() throws Exception {
         //TODO 2 - select dropdown option by value of "Option 1" element and verify that this element was selected
 
-        //TODO 2
     }
 
 
@@ -49,9 +47,17 @@ public class DropdownTest {
         // hence - "two Lists are defined to be equal if they contain the same elements in the same order.", hence you can use assertEquals for comparing 2 lists
 
 
-        //TODO 3
+
     }
 
+
+    @Test
+    public void nonSelectDropdownTest() throws Exception {
+        //TODO 4 - https://jqueryui.com/selectmenu/" - from the Speed dropdown select "Fast" option and verify that this option was selected
+        //Hint - iFrame doesn`t have any id nor name, but there are no iframes in the page. Hence, you can switch to the frame by index. But regardless, always ping UI devs to add name or id for such cases!
+        //Hint - Dropdown is not a <select> element, hence you can`t use Select class
+
+    }
 
     //TODO - add tests for non <select> elements
 

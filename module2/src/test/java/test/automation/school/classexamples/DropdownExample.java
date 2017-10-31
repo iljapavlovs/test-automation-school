@@ -1,4 +1,4 @@
-package test.automation.school.dropdown;
+package test.automation.school.classexamples;
 
 
 import org.openqa.selenium.By;
@@ -13,7 +13,6 @@ import java.util.stream.Collectors;
 public class DropdownExample {
 
     public static void main(String[] args) {
-        System.setProperty("webdriver.firefox.bin", "C:\\tools\\Firefox\\firefox.exe");
         System.setProperty("webdriver.gecko.driver", "drivers/geckodriver-v0.17.0-win32/geckodriver.exe");
         WebDriver driver = new FirefoxDriver();
 

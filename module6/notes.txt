@@ -120,3 +120,13 @@ sites to automate -
 
 * Clean code  - https://code.tutsplus.com/tutorials/top-15-best-practices-for-writing-super-readable-code--net-8118
 https://dev.to/mohitrajput987/importance-of-writing-clean-code
+
+
+*add explanation how DOM elements might appear in DOM:
+        /*
+        //NOTE - verify how dropdown options appear -
+        // 1. they already might be in the DOM before clicking the dropdown.
+                -> Then you may locate elements (driver.findElement()) in the top of the script
+        // 2. they appear in the DOM only when clicking on the dropdown.
+                -> Then you need to locate elements only after the dropdown click action
+        */
