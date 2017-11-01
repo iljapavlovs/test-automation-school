@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -45,6 +46,7 @@ public class Homework2 {
     public void testTitle() throws Exception {
         assertEquals(driver.getTitle(), "Super Calculator");
 
+
     }
 
 
@@ -55,17 +57,25 @@ public class Homework2 {
     public void testMathAction() throws Exception {
         WebElement firstNumberInput = driver.findElement(By.cssSelector("[ng-model='first']"));
         WebElement secondNumberInput = driver.findElement(By.cssSelector("[ng-model='second']"));
+
+        WebElement operationDropdown = driver.findElement(By.cssSelector("[ng-model='operator']"));
+        Select operationDropdownSelect = new Select(operationDropdown);
+        operationDropdownSelect.selectByValue("MULTIPLICATION");
+
+
         WebElement goButton = driver.findElement(By.cssSelector("#gobutton"));
 
         firstNumberInput.sendKeys("1");
         secondNumberInput.sendKeys("2");
+
+
         goButton.click();
 
 
-        new WebDriverWait(driver, 3).until(ExpectedConditions.textToBePresentInElement(driver.findElement(By.cssSelector("h2")), "3"));
+        new WebDriverWait(driver, 3).until(ExpectedConditions.textToBePresentInElement(driver.findElement(By.cssSelector("h2")), "2"));
 
         String resultLabelText = driver.findElement(By.cssSelector("h2")).getText();
-        assertEquals(resultLabelText, "3");
+        assertEquals(resultLabelText, "2");
     }
 
 
@@ -78,21 +88,44 @@ public class Homework2 {
         WebElement secondNumberInput = driver.findElement(By.cssSelector("[ng-model='second']"));
         WebElement goButton = driver.findElement(By.cssSelector("#gobutton"));
 
-        firstNumberInput.sendKeys("1");
-        secondNumberInput.sendKeys("2");
+        WebElement operationDropdown = driver.findElement(By.cssSelector("[ng-model='operator']"));
+        Select operationDropdownSelect = new Select(operationDropdown);
+        operationDropdownSelect.selectByValue("SUBTRACTION");
+
+        firstNumberInput.sendKeys("2");
+        secondNumberInput.sendKeys("1");
         goButton.click();
 
-        new WebDriverWait(driver, 3).until(ExpectedConditions.textToBePresentInElement(driver.findElement(By.cssSelector("h2")), "3"));
+        new WebDriverWait(driver, 3).until(ExpectedConditions.textToBePresentInElement(driver.findElement(By.cssSelector("h2")), "1"));
 
-        firstNumberInput.sendKeys("1");
-        secondNumberInput.sendKeys("2");
+        firstNumberInput.sendKeys("3");
+        secondNumberInput.sendKeys("1");
+        operationDropdownSelect.selectByValue("SUBTRACTION");
         goButton.click();
 
-        new WebDriverWait(driver, 3).until(ExpectedConditions.textToBePresentInElement(driver.findElement(By.cssSelector("h2")), "3"));
+        new WebDriverWait(driver, 3).until(ExpectedConditions.textToBePresentInElement(driver.findElement(By.cssSelector("h2")), "2"));
 
         List<WebElement> resultList = driver.findElements(By.cssSelector("[ng-repeat='result in memory']"));
 
         assertEquals(resultList.size(), 2);
+    }
 
+
+    public enum Operation {
+        ADDITION("ADDITION"),
+        DIVISION("DIVISION"),
+        MODULO("MODULO"),
+        MULTIPLICATION("MULTIPLICATION"),
+        SUBTRACTION("SUBTRACTION");
+
+        private String dropdownValue;
+
+        Operation(String dropdownValue) {
+            this.dropdownValue = dropdownValue;
+        }
+
+        public String getOperation() {
+            return dropdownValue;
+        }
     }
 }
