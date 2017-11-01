@@ -1,4 +1,4 @@
-package test.automation.school;
+package test.automation.school.tasks;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -15,7 +15,7 @@ import java.util.List;
 
 import static org.testng.AssertJUnit.assertEquals;
 
-public class Homework2 {
+public class Homework2Test {
 
     //* Each test is Autonomous - test is not dependant on any other tests and can be run in parallel
     // Note how important to set the initial state before every test - calculator state is changed after each operation and it will affect 'testMathAction' test

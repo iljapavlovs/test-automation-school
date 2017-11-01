@@ -1,4 +1,4 @@
-package test.automation.school.cleancode;
+package test.automation.school.cleancode.tests;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -9,19 +9,20 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import test.automation.school.cleancode.enums.Operation;
+import test.automation.school.cleancode.utils.WebdriverHelper;
 
 import java.util.List;
 
 import static org.testng.AssertJUnit.assertEquals;
 
-public class CleanCode {
+public class CleanCodeTest {
 
 
     //* Each test is Autonomous - test is not dependant on any other tests and can be run in parallel
     // Note how important to set the initial state before every test - calculator state is changed after each operation and it will affect 'testMathAction' test
     //* Each test is Atomic - tests only one functionality
     //* Each test is Small - does not
-
 
     private static final By FIRST_NUMBER_INPUT_LOCATOR = By.cssSelector("[ng-model='first']");
     private static final By SECOND_NUMBER_INPUT_LOCATOR = By.cssSelector("[ng-model='second']");
@@ -54,8 +55,6 @@ public class CleanCode {
     @Test
     public void testTitle() throws Exception {
         assertEquals(driver.getTitle(), "Super Calculator");
-
-
     }
 
 
@@ -118,24 +117,6 @@ public class CleanCode {
     }
 
     private void selectOperation(WebElement operationDropdown, Operation operation) {
-        Helper.selectByValueFromDropdown(operationDropdown, operation.getOperation());
-    }
-
-    private enum Operation {
-        ADDITION("ADDITION"),
-        DIVISION("DIVISION"),
-        MODULO("MODULO"),
-        MULTIPLICATION("MULTIPLICATION"),
-        SUBTRACTION("SUBTRACTION");
-
-        private String dropdownValue;
-
-        Operation(String dropdownValue) {
-            this.dropdownValue = dropdownValue;
-        }
-
-        public String getOperation() {
-            return dropdownValue;
-        }
+        WebdriverHelper.selectByValueFromDropdown(operationDropdown, operation.getOperation());
     }
 }

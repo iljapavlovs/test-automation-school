@@ -34,6 +34,13 @@ public class CleanCodeTask {
         driver.get("http://ss.com");
     }
 
+
+    @Test
+    public void tesSmth() throws Exception {
+
+
+    }
+
     @Test
     public void test1() throws Exception {
         WebElement lang = driver.findElement(By.cssSelector(".menu_lang .a_menu"));

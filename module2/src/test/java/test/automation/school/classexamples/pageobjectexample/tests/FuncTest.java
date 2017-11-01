@@ -27,5 +27,6 @@ public class FuncTest {
     public void test() {
         LoginPage loginPage = new LoginPage(driver);
         HomePage homePage = loginPage.loginAs("user", "pwd");
+
     }
 }
