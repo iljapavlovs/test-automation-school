@@ -110,22 +110,4 @@ public class Homework2 {
         assertEquals(resultList.size(), 2);
     }
 
-
-    public enum Operation {
-        ADDITION("ADDITION"),
-        DIVISION("DIVISION"),
-        MODULO("MODULO"),
-        MULTIPLICATION("MULTIPLICATION"),
-        SUBTRACTION("SUBTRACTION");
-
-        private String dropdownValue;
-
-        Operation(String dropdownValue) {
-            this.dropdownValue = dropdownValue;
-        }
-
-        public String getOperation() {
-            return dropdownValue;
-        }
-    }
 }
