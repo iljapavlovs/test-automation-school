@@ -130,3 +130,20 @@ https://dev.to/mohitrajput987/importance-of-writing-clean-code
         // 2. they appear in the DOM only when clicking on the dropdown.
                 -> Then you need to locate elements only after the dropdown click action
         */
+
+
+
+        * Dont hardcode data which may change with time - e.g. testing envs, test users, explicit waits, etc
+        	* parametrize it via external files - like config file for env URL or JSON for users data;
+        * more general Fixtures Can Be Put to BaseTest class  and your Test class should extend the Base Test class.
+        This way test class only has testing code without any preparation and teardown code
+        * DriverFactory - Hide the logic of initializing an object inside the factory
+        * Common methods, fields, initilization can be moved to parent Page class for all page objects
+
+
+
+* Running tests from Maven:
+        * setting env variables (e.g. setting browser via -Dbrowser) - surefire systemVariables
+        * pom properties
+        * surefire - generate reports in xml format
+        * running in parallel - parallel, threadCount and forkCount
