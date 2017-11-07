@@ -1,20 +1,16 @@
 package atbildes;
 
-import org.apache.commons.io.FileUtils;
-import org.openqa.selenium.*;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.ITestResult;
-import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import java.io.File;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
 
 import static org.testng.Assert.assertTrue;
@@ -40,16 +36,8 @@ public class Task1 {
     }
 
 
-    @AfterMethod(alwaysRun = true)
-    public void tearDown(ITestResult testResult) throws Exception {
+    public void tearDown() throws Exception {
 
-        if (testResult.getStatus() == ITestResult.FAILURE) {
-            File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-            FileUtils.copyFile(scrFile, new File("target" + File.separator
-                    + "errorScreenshots" + File.separator
-                    + testResult.getName() + "-"
-                    + new SimpleDateFormat("yyyy-MM-dd_HHmm").format(new Date()) + ".png"));
-        }
         driver.quit();
     }
 

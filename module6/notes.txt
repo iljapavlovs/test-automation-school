@@ -147,3 +147,66 @@ https://dev.to/mohitrajput987/importance-of-writing-clean-code
         * pom properties
         * surefire - generate reports in xml format
         * running in parallel - parallel, threadCount and forkCount
+
+
+* Wrapping WebDriver into a WebDriverHelper class; (Bot Style Tests -https://github.com/SeleniumHQ/selenium/wiki/Bot-Style-Tests)
+*Working with list of webelements - retrieving a list of text
+ *
+//
+//        List<String> searchResultElementsTextList = new ArrayList<>();
+//        for (WebElement element : searchResultElements){
+//            new WebDriverWait(driver, 4).until(ExpectedConditions.visibilityOf(element.findElement(By.cssSelector(".r a"))));
+//            String linkText = element.findElement(By.cssSelector(".r a")).getText();
+//            searchResultElementsTextList.add(linkText);
+//        }
+//
+//        assertTrue(searchResultElementsTextList.stream().allMatch(t -> t.toLowerCase().contains("cheese")));
+
+
+
+* Being able to define the appropriate level around layers of abstraction is one of the key skills of automation engineers
+
+* show how to handle passwords
+* show DDT
+    @Test
+    public void testGoogleSearchCheese() throws Exception {
+        GooglePage googlePage = new GooglePage(driver);
+        googlePage.searchFor("cheese");
+        GoogleSearchResultPage googleSearchResultPage = new GoogleSearchResultPage(driver);
+        assertTrue(googleSearchResultPage.getFirstSearchResultElementText().toLowerCase().contains("cheese"));
+    }
+
+    @Test
+    public void testGoogleSearchApple() throws Exception {
+        GooglePage googlePage = new GooglePage(driver);
+        googlePage.searchFor("apple");
+        GoogleSearchResultPage googleSearchResultPage = new GoogleSearchResultPage(driver);
+        assertTrue(googleSearchResultPage.getFirstSearchResultElementText().toLowerCase().contains("apple"));
+    }
+
+* DesiredCapabilities, Options:
+            FirefoxOptions options = new FirefoxOptions()
+                    .addPreference("browser.startup.page", 1)
+                    .addPreference("browser.startup.homepage", "https://www.google.co.uk");
+
+   ChromeOptions options = new ChromeOptions()
+   options.addExtensions(new File("/path/to/extension.crx"))
+   options.setBinary(new File("/path/to/chrome"));
+
+   // For use with ChromeDriver:
+   ChromeDriver driver = new ChromeDriver(options);
+
+   // For use with RemoteWebDriver:
+   RemoteWebDriver driver = new RemoteWebDriver(
+       new URL("http://localhost:4444/wd/hub"),
+       new ChromeOptions());
+
+* Navigation: History and Location
+* Cookies https://github.com/SeleniumHQ/selenium/wiki/Next-Steps
+* Capabilities (https://sites.google.com/a/chromium.org/chromedriver/capabilities)
+ Capabilities & ChromeOptions
+ Capabilities are options that you can use to customize and configure a ChromeDriver session. This page documents all ChromeDriver supported capabilities and how to use them.
+
+ There are two ways to specify capabilities.
+ The first is to use the ChromeOptions class.
+ If your client library does not have a ChromeOptions class (like the selenium ruby client), you can specify the capabilities directly as part of the DesiredCapabilities.

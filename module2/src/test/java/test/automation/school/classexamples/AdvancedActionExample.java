@@ -9,14 +9,13 @@ import org.openqa.selenium.interactions.Actions;
 
 public class AdvancedActionExample {
 
-
     public static void main(String[] args) {
 
         System.setProperty("webdriver.gecko.driver", "drivers/geckodriver-v0.17.0-win32/geckodriver.exe");
         WebDriver driver = new FirefoxDriver();
 
 
-        driver.get("http://the-internet.herokuapp.com/hovers/");
+        driver.get("http://the-internet.herokuapp.com/hovers");
         System.out.println("Current URL: " + driver.getCurrentUrl());
 
         // Locate element which

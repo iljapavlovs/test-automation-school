@@ -1,18 +1,15 @@
-package test.automation.school.pageobjecttasks.tests;
-
+package test.automation.school.classexamples.pageobjectexample.sscomexample.tests;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import test.automation.school.pageobjecttasks.pageobejcts.TopMenuBar;
+import test.automation.school.classexamples.pageobjectexample.sscomexample.pageobjects.TopMenuBar;
 
-import static org.testng.AssertJUnit.assertEquals;
+import static org.testng.Assert.assertEquals;
 
-public class SomethingTest {
-
-
+public class SsComTest {
     private WebDriver driver;
 
     @BeforeMethod
@@ -39,13 +36,10 @@ public class SomethingTest {
     }
 
     @Test
-    public void testSmth() throws Exception {
+    public void testLanguage() throws Exception {
         TopMenuBar topMenuBar = new TopMenuBar(driver);
         topMenuBar.changeLanguage();
-
         assertEquals(topMenuBar.getPageHeaderHeadText(), "ОБЪЯВЛЕНИЯ");
-
-
     }
 
     @Test
@@ -53,8 +47,7 @@ public class SomethingTest {
         TopMenuBar topMenuBar = new TopMenuBar(driver);
         topMenuBar.changeLanguage();
         topMenuBar.goToSearch();
-
-
+        //...
     }
 
 }

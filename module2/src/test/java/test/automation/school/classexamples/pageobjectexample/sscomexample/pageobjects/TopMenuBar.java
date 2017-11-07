@@ -1,5 +1,4 @@
-package test.automation.school.pageobjecttasks.pageobejcts;
-
+package test.automation.school.classexamples.pageobjectexample.sscomexample.pageobjects;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;

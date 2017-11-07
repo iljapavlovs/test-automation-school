@@ -1,4 +1,4 @@
-package test.automation.school.classexamples.pageobjectexample.pageobjects;
+package test.automation.school.classexamples.pageobjectexample.loginform;
 
 
 import org.openqa.selenium.WebDriver;
