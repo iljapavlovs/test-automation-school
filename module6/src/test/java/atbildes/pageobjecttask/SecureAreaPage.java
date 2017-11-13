@@ -8,7 +8,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class SecureAreaPage {
 
-    private static final By NOTIFICATION_SECTION_LOCATOR = By.id("username");
+    private static final By NOTIFICATION_SECTION_LOCATOR = By.id("flash-messages");
     private static final By LOGOUT_BUTTON_LOCATOR = By.cssSelector("[href='/logout']");
 
     private WebDriver driver;
