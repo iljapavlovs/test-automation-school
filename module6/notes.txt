@@ -95,6 +95,7 @@ notes from minsk:
 * https://github.com/Fulcrum81/SeleniumTraining
 
 * File upload and download example - https://github.com/Fulcrum81/FileUploadDownload
+ * File upload when using RemoteWebdriver (https://saucelabs.com/blog/selenium-tips-uploading-files-in-remote-webdriver )
 * simple fw with page objects, but without page factory (BY as fields) - https://github.com/Fulcrum81/TestTemplate
 * one driver per tests - https://github.com/Fulcrum81/WebDriverSingletonTemplate,https://github.com/Fulcrum81/WebDriverSingletonTemplate/blob/master/src/main/java/base/DriverContainer.java
 * putting locators into separate file - https://github.com/Fulcrum81/WebDriverSingletonTemplate/blob/master/src/main/resources/locators.properties, https://github.com/Fulcrum81/WebDriverSingletonTemplate/blob/master/src/main/java/helpers/Locators.java
