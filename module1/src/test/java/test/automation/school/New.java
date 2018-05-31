@@ -17,7 +17,7 @@ public class New {
         WebElement searchField = chromeDriver.findElement(By.cssSelector("[name='q']"));
 //        chromeDriver.findElement(By.xpath("//*[@[name='q']]"));
 
-        searchField.sendKeys("Hello");
+        searchField.sendKeys("Selenium");
         searchField.sendKeys(Keys.ENTER);
 
     }
