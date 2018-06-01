@@ -211,3 +211,8 @@ https://dev.to/mohitrajput987/importance-of-writing-clean-code
  There are two ways to specify capabilities.
  The first is to use the ChromeOptions class.
  If your client library does not have a ChromeOptions class (like the selenium ruby client), you can specify the capabilities directly as part of the DesiredCapabilities.
+
+
+ * Guidelines and Recommendations
+ https://seleniumhq.github.io/docs/guidelines.html
+
