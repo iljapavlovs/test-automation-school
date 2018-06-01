@@ -63,7 +63,7 @@ public class LocatorsTest {
 
     @Test
     public void locateElementByTagNameTest() throws Exception {
-        //TODO 3 - locate all images by tag name and put them into ArrayList Collection
+        //TODO 3 - locate all images by tag name and put them into ArrayList Collection. Then check that first element in Collection is displayed
 
         //TODO 3
     }
@@ -71,7 +71,7 @@ public class LocatorsTest {
 
     @Test
     public void locateElementByNameTest() throws Exception {
-        //TODO 4 - locate newsletter subscription input element by name
+        //TODO 4 - locate newsletter subscription input element by name. Then check that element is displayed
 
         //TODO 4
     }
@@ -79,7 +79,7 @@ public class LocatorsTest {
 
     @Test
     public void locateElementByLinkTextTest() throws Exception {
-        //TODO 5 - locate "T-Shirts" element by link text
+        //TODO 5 - locate "T-Shirts" element by link text. Then check that element is displayed
         // NOTE - linkText() is case sensitive and should be selected as it is rendered on the screen, not in HTML
 
         //TODO 5
