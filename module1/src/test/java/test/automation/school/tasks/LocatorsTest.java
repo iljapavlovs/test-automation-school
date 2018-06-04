@@ -10,6 +10,10 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import java.util.List;
+
+import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertTrue;
 
 public class LocatorsTest {
     /*
@@ -33,7 +37,7 @@ public class LocatorsTest {
 
     @BeforeClass
     public void setUp() throws Exception {
-        System.setProperty("webdriver.chrome.driver", "../drivers/chromedriver-v2.30-win32/chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "../drivers/chromedriver-v2.39-win32/chromedriver.exe");
         driver = new ChromeDriver();
         driver.get("http://automationpractice.com/index.php");
     }
@@ -47,7 +51,6 @@ public class LocatorsTest {
     public void locateElementByIdTest() throws Exception {
         //TODO 1 - locate search input field by ID and assign to a variable named elementById
         WebElement elementById = driver.findElement(By.id("search_query_top"));
-
         Assert.assertTrue(elementById.isDisplayed());
         //TODO 1
     }
@@ -56,7 +59,8 @@ public class LocatorsTest {
     @Test
     public void locateElementByClassNameTest() throws Exception {
         //TODO 2 - locate *all* (also that are not visible on the screen) products by class name and put them into ArrayList Collection and check that elements list size is 14
-
+        List<WebElement> elements = driver.findElements(By.className("ajax_block_product"));
+        Assert.assertTrue(elements.size()==14);
         //TODO 2
     }
 
@@ -64,7 +68,8 @@ public class LocatorsTest {
     @Test
     public void locateElementByTagNameTest() throws Exception {
         //TODO 3 - locate all images by tag name and put them into ArrayList Collection. Then check that first element in Collection is displayed
-
+        List<WebElement> imageElements = driver.findElements(By.tagName("img"));
+        assertEquals(imageElements.size(), 30);
         //TODO 3
     }
 
@@ -72,7 +77,8 @@ public class LocatorsTest {
     @Test
     public void locateElementByNameTest() throws Exception {
         //TODO 4 - locate newsletter subscription input element by name. Then check that element is displayed
-
+        WebElement emailInputElement = driver.findElement(By.name("email"));
+        assertTrue(emailInputElement != null);
         //TODO 4
     }
 
@@ -81,15 +87,17 @@ public class LocatorsTest {
     public void locateElementByLinkTextTest() throws Exception {
         //TODO 5 - locate "T-Shirts" element by link text. Then check that element is displayed
         // NOTE - linkText() is case sensitive and should be selected as it is rendered on the screen, not in HTML
-
+        WebElement linkTextElement = driver.findElement(By.linkText("T-SHIRTS"));
+        assertTrue(linkTextElement.isDisplayed());
         //TODO 5
     }
 
 
     @Test
-    public void locateElementByCssSelctorTest() throws Exception {
+    public void locateElementByCssSelectorTest() throws Exception {
         //TODO 6 - locate only *visible* products element by CSS and put them into ArrayList Collection and check that elements list size is 7
-
+        List<WebElement> visibleElements = driver.findElements(By.cssSelector("#homefeatured.active > li"));
+        assertEquals(visibleElements.size(), 7);
         //TODO 6
 
     }
@@ -100,7 +108,8 @@ public class LocatorsTest {
         //NOTE - you have to indicate all class names that are specified on the current element
         // This is contrary to CSS Selector where you can specify just one of the class names
         // TIP - use 'contains()'
-
+        List<WebElement> visibleElements = driver.findElements(By.xpath("//*[@id='homefeatured']//li"));
+        assertEquals(visibleElements.size(), 7);
         //TODO 7
     }
 

@@ -75,3 +75,5 @@ if (a == b){
 //...
 }
 ```
+
+1. No, this will compare the references to objects. In some cases this will work, in some not. For string comparison you should use object.equals(Object other)
