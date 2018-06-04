@@ -10,6 +10,9 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import java.util.List;
+
+import static org.testng.Assert.assertEquals;
 
 
 public class LocatorsTest {
@@ -41,7 +44,9 @@ public class LocatorsTest {
     @Test
     public void locateElementByClassNameTest() throws Exception {
         //TODO 2 - locate *all* (also that are not visible on the screen) products by class name and put them into ArrayList Collection and check that elements list size is 14
-
+        List<WebElement> elements = driver.findElements(By.cssSelector(".ajax_block_product"));
+        assertEquals (elements.size(), 14);
+        //search all products, Ctrl+Alt+V
         //TODO 2
     }
 
