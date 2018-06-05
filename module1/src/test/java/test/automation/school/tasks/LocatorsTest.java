@@ -14,9 +14,24 @@ import java.util.List;
 
 import static org.testng.Assert.assertEquals;
 
-
 public class LocatorsTest {
-
+    /*
+    * add assert for all tests - check for visibility
+    * in order to run individual test, you need to hover over the required test and right click ->Run
+    * check that variables named correctly
+    * import correct List
+    * use findElements for retrieving multiple elements, not findElement
+    * css selector ->
+       * .class .class - 'space' means nesting (one element is a children or grandchildren of another)
+       * .class.class - when written in conjunction then it means that this element has multiple classes and
+           * in HTML it is viewed via space 'class class'
+    * 2nd task - search for all elements, not possible to search for visible
+    * 6th and 7th - search only for visible elements
+    * linkText() is case sensitive and should be selected as it is rendered on the screen, not in HTML
+    * dont be afraid to check the stacktrace, it contains useful info - e.g. the line of code where it has failed
+    * Use debug to see in which state AUT is at the moment of failure
+    * consider how browser is initialized - in this example it is initialized once and killed once, so there is only one browser session for all tests
+    */
     private WebDriver driver;
 
     @BeforeClass
@@ -53,7 +68,7 @@ public class LocatorsTest {
 
     @Test
     public void locateElementByTagNameTest() throws Exception {
-        //TODO 3 - locate all images by tag name and put them into ArrayList Collection
+        //TODO 3 - locate all images by tag name and put them into ArrayList Collection. Then check that first element in Collection is displayed
 
         //TODO 3
     }
@@ -61,7 +76,7 @@ public class LocatorsTest {
 
     @Test
     public void locateElementByNameTest() throws Exception {
-        //TODO 4 - locate newsletter subscription input element by name
+        //TODO 4 - locate newsletter subscription input element by name. Then check that element is displayed
 
         //TODO 4
     }
@@ -69,7 +84,7 @@ public class LocatorsTest {
 
     @Test
     public void locateElementByLinkTextTest() throws Exception {
-        //TODO 5 - locate "T-Shirts" element by link text
+        //TODO 5 - locate "T-Shirts" element by link text. Then check that element is displayed
         // NOTE - linkText() is case sensitive and should be selected as it is rendered on the screen, not in HTML
 
         //TODO 5
