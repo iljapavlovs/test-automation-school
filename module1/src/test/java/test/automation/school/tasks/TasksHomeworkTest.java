@@ -12,18 +12,18 @@ import java.util.List;
 import static org.testng.Assert.assertEquals;
 
 public class TasksHomeworkTest {
-    
+
     private WebDriver driver;
 
     @BeforeMethod
     public void setUp() {
         System.setProperty("webdriver.firefox.bin", "C:/tools/Firefox/firefox.exe");
         System.setProperty("webdriver.gecko.driver", "../drivers/geckodriver-v0.20.1-win64/geckodriver.exe");
-        
+
         driver = new FirefoxDriver();
         driver.get("http://juliemr.github.io/protractor-demo/");
     }
-    
+
     @AfterMethod
     public void tearDown() {
         driver.quit();
@@ -50,7 +50,7 @@ public class TasksHomeworkTest {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        assertEquals(lblanswer.getText(),"16");
+        assertEquals(lblanswer.getText(), "16");
     }
 
     @Test
@@ -68,7 +68,7 @@ public class TasksHomeworkTest {
         Thread.sleep(3000);
 
         List<WebElement> actionsEntries = driver.findElements(By.cssSelector("[ng-repeat='result in memory']"));
-        assertEquals(actionsEntries.size(),2);
+        assertEquals(actionsEntries.size(), 2);
 
     }
 }
