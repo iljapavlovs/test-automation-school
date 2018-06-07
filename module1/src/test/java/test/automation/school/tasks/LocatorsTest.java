@@ -69,8 +69,8 @@ public class LocatorsTest {
     @Test
     public void locateElementByTagNameTest() throws Exception {
         //TODO 3 - locate all images by tag name and put them into ArrayList Collection. Then check that first element in Collection is displayed
-        List<WebElement> list = driver.findElements(By.cssSelector("img"));
-        WebElement firstImage = list.get(0);
+        List<WebElement> imgList = driver.findElements(By.cssSelector("img"));
+        WebElement firstImage = imgList.get(0);
         Assert.assertTrue(firstImage.isDisplayed(), "First image is not displayed");
         //TODO 3
     }
@@ -98,7 +98,7 @@ public class LocatorsTest {
     @Test
     public void locateElementByCssSelctorTest() throws Exception {
         //TODO 6 - locate only *visible* products element by CSS and put them into ArrayList Collection and check that elements list size is 7
-        List<WebElement> list = driver.findElements(By.cssSelector("#homefeatured>.ajax_block_product"));
+        List<WebElement> list = driver.findElements(By.cssSelector(".active .ajax_block_product"));
         Assert.assertEquals(list.size(), 7, "Incorrect visible elements count");
         //TODO 6
 
@@ -110,7 +110,7 @@ public class LocatorsTest {
         //NOTE - you have to indicate all class names that are specified on the current element
         // This is contrary to CSS Selector where you can specify just one of the class names
         // TIP - use 'contains()'
-        List<WebElement> list = driver.findElements(By.xpath("//ul[@id='homefeatured']/li[contains(@class, 'ajax_block_product')]"));
+        List<WebElement> list = driver.findElements(By.xpath("//*[contains(@class,'active')]/*[contains(@class,'ajax_block_product')]"));
         Assert.assertEquals(list.size(), 7, "Incorrect visible elements count");
         //TODO 7
     }
