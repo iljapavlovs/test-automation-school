@@ -21,7 +21,7 @@ public class googleSearchTest {
         System.setProperty("webdriver.chrome.driver", "../drivers/chromedriver_v2.39_win32/chromedriver.exe");
          driver = new ChromeDriver();
 
-        driver.get("http://google.com");
+        driver.get("http://the-internet.herokuapp.com/dynamic_controls");
     }
     /*
     public static void main(String[] args) {

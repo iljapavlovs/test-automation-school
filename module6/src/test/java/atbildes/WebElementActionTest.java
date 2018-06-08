@@ -60,7 +60,7 @@ public class WebElementActionTest {
     @Test
     public void testInputActions() throws Exception {
         WebElement searchInput = driver.findElement(By.id("search_query_top"));
-        String inputText = "test";
+        String inputText = "test"; //reuse ot text further on so not to enter it all the times
 
         searchInput.sendKeys(inputText);
         assertEquals(searchInput.getAttribute("value"), inputText);

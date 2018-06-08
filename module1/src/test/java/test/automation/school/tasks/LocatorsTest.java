@@ -13,6 +13,7 @@ import org.testng.annotations.Test;
 import java.util.List;
 
 import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertTrue;
 
 public class LocatorsTest {
     /*
@@ -41,7 +42,7 @@ public class LocatorsTest {
         driver.get("http://automationpractice.com/index.php");
     }
 
-    @AfterClass
+   @AfterClass
     public void tearDown() throws Exception {
         driver.quit();
     }
@@ -59,7 +60,8 @@ public class LocatorsTest {
     @Test
     public void locateElementByClassNameTest() throws Exception {
         //TODO 2 - locate *all* (also that are not visible on the screen) products by class name and put them into ArrayList Collection and check that elements list size is 14
-        List<WebElement> elements = driver.findElements(By.cssSelector(".ajax_block_product"));
+       // List<WebElement> elements = driver.findElements(By.cssSelector(".ajax_block_product")); //done together
+        List<WebElement> elements = driver.findElements(By.className("ajax_block_product"));
         assertEquals (elements.size(), 14);
         //search all products, Ctrl+Alt+V
         //TODO 2
@@ -69,7 +71,8 @@ public class LocatorsTest {
     @Test
     public void locateElementByTagNameTest() throws Exception {
         //TODO 3 - locate all images by tag name and put them into ArrayList Collection. Then check that first element in Collection is displayed
-
+        List<WebElement> findImgByTag = driver.findElements(By.tagName("img"));
+         assertTrue(findImgByTag.get(0).isDisplayed());
         //TODO 3
     }
 
@@ -77,6 +80,8 @@ public class LocatorsTest {
     @Test
     public void locateElementByNameTest() throws Exception {
         //TODO 4 - locate newsletter subscription input element by name. Then check that element is displayed
+        WebElement findNewsLtrSubsIn = driver.findElement(By.id("newsletter-input"));
+        assertTrue(findNewsLtrSubsIn.isDisplayed());
 
         //TODO 4
     }
@@ -86,6 +91,9 @@ public class LocatorsTest {
     public void locateElementByLinkTextTest() throws Exception {
         //TODO 5 - locate "T-Shirts" element by link text. Then check that element is displayed
         // NOTE - linkText() is case sensitive and should be selected as it is rendered on the screen, not in HTML
+        WebElement findTshirtsLinkText = driver.findElement(By.linkText("T-SHIRTS"));
+        assertTrue(findTshirtsLinkText.isDisplayed());
+
 
         //TODO 5
     }
@@ -94,7 +102,10 @@ public class LocatorsTest {
     @Test
     public void locateElementByCssSelctorTest() throws Exception {
         //TODO 6 - locate only *visible* products element by CSS and put them into ArrayList Collection and check that elements list size is 7
-
+        List<WebElement> findVsblProd = driver.findElements(By.cssSelector(".active .ajax_block_product"));
+        //  List<WebElement> findVsblProd = driver.findElements(By.cssSelector("#homefeatured .product_list grid row homefeatured tab-pane active"));
+        assertEquals (findVsblProd.size(), 7);
+//.active .ajax_block_product
         //TODO 6
 
     }
@@ -105,7 +116,10 @@ public class LocatorsTest {
         //NOTE - you have to indicate all class names that are specified on the current element
         // This is contrary to CSS Selector where you can specify just one of the class names
         // TIP - use 'contains()'
+        List<WebElement> fndVsblXpth = driver.findElements(By.xpath("//*[contains(@class,'active')]/*[contains(@class,'ajax_block_product')]"));
+        assertEquals(fndVsblXpth.size(), 7);
 
+// xpath to use  //*[contains(@class,'active')]/*[contains(@class,'ajax_block_product')]
         //TODO 7
     }
 
