@@ -25,7 +25,7 @@ public class WebElementStateTest {
     //
     @BeforeClass
     public void setUp() throws Exception {
-        System.setProperty("webdriver.gecko.driver", "../drivers/geckodriver-v0.17.0-win32/geckodriver.exe");
+        System.setProperty("webdriver.gecko.driver", "../drivers/geckodriver-v0.20.1-win64/geckodriver.exe");
     }
     //TODO 1
 
