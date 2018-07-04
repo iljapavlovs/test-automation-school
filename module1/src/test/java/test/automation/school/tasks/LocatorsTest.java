@@ -89,13 +89,14 @@ public class LocatorsTest {
         WebElement tShirtsTab = driver.findElement(By.linkText("T-SHIRTS"));
         assertTrue(tShirtsTab.isDisplayed());
         //TODO 5
+
     }
 
 
     @Test
     public void locateElementByCssSelctorTest() throws Exception {
         //TODO 6 - locate only *visible* products element by CSS and put them into ArrayList Collection and check that elements list size is 7
-        List<WebElement> visibleElements = driver.findElements(By.cssSelector("#homefeatured>li"));
+        List<WebElement> visibleElements = driver.findElements(By.cssSelector(".active.ajax_block_product"));
         int i = visibleElements.size();
         assertEquals(i, 7);
         //TODO 6
@@ -105,7 +106,7 @@ public class LocatorsTest {
     @Test
     public void locateElementByXpathTest() throws Exception {
         //TODO 7 - locate only *visible* products element by XPATH and put them into ArrayList Collection and check that elements list size is 7
-        List<WebElement> elements = driver.findElements(By.xpath("//*[@id='homefeatured']//li[contains(@class,'ajax_block_product')]"));
+        List<WebElement> elements = driver.findElements(By.xpath("//*[contains(@class,'active')]/*[contains(@class,'ajax_block_product')]"));
         assertEquals(elements.size(), 7);
         //TODO 7
     }
