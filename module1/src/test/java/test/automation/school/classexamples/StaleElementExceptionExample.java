@@ -9,8 +9,8 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 public class StaleElementExceptionExample {
 
     public static void main(String[] args) throws InterruptedException {
-
-        System.setProperty("webdriver.gecko.driver", "drivers/geckodriver-v0.17.0-win32/geckodriver.exe");
+        System.setProperty("webdriver.firefox.bin", "C:\\tools\\Firefox\\firefox.exe");
+        System.setProperty("webdriver.gecko.driver", "drivers/geckodriver-v0.20.1-win64/geckodriver.exe");
         WebDriver driver = new FirefoxDriver();
         driver.get("http://www.google.com");
         WebElement element = driver.findElement(By.name("q"));
